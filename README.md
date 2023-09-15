@@ -11,3 +11,4 @@ Code and Files for all the minisumo and sumo related projects I make, this repos
 - Jyo: PCB for microsumo using Seeeduino Xiao and DRV7781 drivers
 ## Code
 - Basic: basic minisumo code without line sensors and 2 opponent sensors
+- SumoESP: minisumo code for the Arduino Nano ESP model
