@@ -105,7 +105,7 @@ void derecha(int a, int b, int t){
 
 void loop(){
   while(digitalRead(REMOTE)==HIGH){
-    FLAG.write(80);
+    FLAG.write(90);
     switch(lineval()){
       case 0: //BLANCO
         paro(75);
