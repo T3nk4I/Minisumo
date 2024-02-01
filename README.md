@@ -12,3 +12,5 @@ Code and Files for all the minisumo and sumo related projects I make, this repos
 ## Code
 - Basic: basic minisumo code without line sensors and 2 opponent sensors
 - SumoESP: minisumo code for the Arduino Nano ESP model
+## 3D Data
+- Flag System: DAMASHI-FLAG-SYSTEM, used for minisumo robots, compatible with the "OH", "JIN" and "MA-JIN" motor brackets.
