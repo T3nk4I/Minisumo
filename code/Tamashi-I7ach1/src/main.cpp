@@ -99,12 +99,11 @@ void Left(byte a, byte b, int t){
   delay(t);
 }
 
-void MotorOff(int t){
+void MotorOff(){
   ledcWrite(PWM_MR1, 0);
   ledcWrite(PWM_MR2, 0);
   ledcWrite(PWM_ML1, 0);
   ledcWrite(PWM_ML2, 0);
-  delay(t);
 }
 
 void Brake(int t){
@@ -116,35 +115,60 @@ void Brake(int t){
 }
 
 void Main_Battle(){
-  while(LineState()==3){
-    switch (SensState()){
-    case 1:
-      /* code */
-      break;
-          
-    case 2:
-
-      break;
-
-    case 3:
-      Foward(255,255,10);
-      break;
-
-    default:
-      break;
+  while (digitalRead(START)==HIGH){
+    leds[0] = CRGB::Black;
+    leds[1] = CRGB::Black;
+    FastLED.show();
+    while(LineState()==3){
+          switch (SensState()){
+          case 1:
+            Foward(75,100,20); 
+            break;
+          case 2:
+            Foward(100,75,20);
+            break;
+          case 3:
+            for(int i=0; i>=255; i++){
+              Foward(i,i,2);
+            }
+            break;
+          case 4:
+            Right(255,175,20);
+            break;
+          case 8:
+            Left(175,255,20);
+            break;
+          default:
+            Foward(70,70,10);
+            break;
+          }
+    }
+    if (LineState()==0){
+      Brake(100);
+      Backwards(200,200,175);
+    }
+    
+    else if (LineState()==1){
+        //code 
+        Brake(50);
+        Backwards(200,200,100);
+        Right(200,200,100);
+    }
+    else if(LineState()==2){
+          //code
+          Brake(50);
+          Backwards(200,200,100);
+          Left(200,200,100);
     }
   }
-  if (LineState()==1){
-   //code 
-  }
-  else if(LineState()==2){
-    //code
+  if(digitalRead(START)==LOW){
+    MotorOff();
   }
 }
 
 void loop(){
-  if(digitalRead(STRAT_SW==HIGH)){  //increases value of strat each time the STRAT button is pressed
-    delay(10);  //increase delay for more "sensitive" button, decrease for less sensitivity
+  if(digitalRead(STRAT_SW==LOW)){  //increases value of strat each time the STRAT button is pressed
+    delay(50);  //increase delay for more "sensitive" button, decrease for less sensitivity
     strat ++;
     if (strat > 8){
       strat = 0;
@@ -156,6 +180,7 @@ void loop(){
     leds[0] = CRGB::Red;
     leds[1] = CRGB::Red;
     FastLED.show();
+    CurveLeft();
     break;
   
   case 1:
@@ -178,6 +203,13 @@ void loop(){
     leds[1] = CRGB::Yellow;
     FastLED.show();
     break;
+  }
+}
+
+void CurveLeft(){
+  while (digitalRead(START==HIGH)){
+    Foward(255, 100, 500);
+    Main_Battle();
   }
 }
 
