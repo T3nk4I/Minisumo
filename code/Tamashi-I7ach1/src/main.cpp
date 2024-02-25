@@ -115,6 +115,33 @@ void Brake(int t){
   delay(t);
 }
 
+void Main_Battle(){
+  while(LineState()==3){
+    switch (SensState()){
+    case 1:
+      /* code */
+      break;
+          
+    case 2:
+
+      break;
+
+    case 3:
+      Foward(255,255,10);
+      break;
+
+    default:
+      break;
+    }
+  }
+  if (LineState()==1){
+   //code 
+  }
+  else if(LineState()==2){
+    //code
+  }
+}
+
 void loop(){
   if(digitalRead(STRAT_SW==HIGH)){  //increases value of strat each time the STRAT button is pressed
     delay(10);  //increase delay for more "sensitive" button, decrease for less sensitivity
