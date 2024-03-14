@@ -117,6 +117,36 @@ void Brake(int t){
   delay(t);
 }
 
+void SensTest(){
+  while (digitalRead(START)==HIGH){
+   switch (SensState()){
+    case 1:
+      leds[0] = CRGB::Red;
+      break;
+
+    case 2:
+      leds[1] = CRGB::Red;
+      break;
+    
+    case 4:
+      leds[0] = CRGB::Yellow;
+      break;
+
+    case 5:
+      leds[0] = CRGB::Green;
+      break;
+
+    case 8:
+      leds[1] = CRGB::Yellow;
+      break;
+    
+    case 10:
+      leds[1] = CRGB::Green;
+      break;
+    } 
+  }
+}
+
 void Main_Battle(){
   while (digitalRead(START)==HIGH){
     leds[0] = CRGB::Black;
@@ -240,6 +270,7 @@ void loop(){
     leds[1] = CRGB::Orange;
     FastLED.show();
     Serial.println("Case 5");
+    SensTest();
     break;
   }
 }
