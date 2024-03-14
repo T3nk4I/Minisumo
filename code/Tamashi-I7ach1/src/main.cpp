@@ -26,7 +26,7 @@ byte strat = 0;
 void setup() {                
   //defining output of the LEDs and type of LED
   pinMode(LED_Pin, OUTPUT);
-  FastLED.addLeds<LED_Type, LED_Pin, RGB>(leds, 2).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_Type, LED_Pin, GRB>(leds, 2).setCorrection(TypicalLEDStrip);
   //defining inputs for sensors and buttons
   pinMode(LINE_L, INPUT);
   pinMode(LINE_R, INPUT);
@@ -46,6 +46,9 @@ void setup() {
   ledcAttachPin(MR2, PWM_MR2);
   ledcAttachPin(ML1, PWM_ML1);
   ledcAttachPin(ML2, PWM_ML2);
+  Serial.begin(115200);
+  Serial.println("Starting booting sequence...");
+  delay(500);
 }
 
 byte SensState(){
@@ -147,7 +150,6 @@ void Main_Battle(){
       Brake(100);
       Backwards(200,200,175);
     }
-    
     else if (LineState()==1){
         //code 
         Brake(50);
@@ -166,11 +168,25 @@ void Main_Battle(){
   }
 }
 
+void CurveLeft(){
+  while (digitalRead(START==HIGH)){
+    Foward(255, 100, 500);
+    Main_Battle();
+  }
+}
+
+void CurveRight(){
+  while (digitalRead(START==HIGH)){
+    Foward(100, 255, 500);
+    Main_Battle();
+  }
+}
+
 void loop(){
-  if(digitalRead(STRAT_SW==LOW)){  //increases value of strat each time the STRAT button is pressed
-    delay(50);  //increase delay for more "sensitive" button, decrease for less sensitivity
+  if(digitalRead(STRAT_SW)==LOW){  //increases value of strat each time the STRAT button is pressed
+    delay(150);  //increase delay for more "sensitive" button, decrease for less sensitivity
     strat ++;
-    if (strat > 8){
+    if (strat > 5){
       strat = 0;
     }
   }
@@ -180,7 +196,8 @@ void loop(){
     leds[0] = CRGB::Red;
     leds[1] = CRGB::Red;
     FastLED.show();
-    CurveLeft();
+    Serial.println("Case 0");
+    Main_Battle();
     break;
   
   case 1:
@@ -188,28 +205,41 @@ void loop(){
     leds[0] = CRGB::Blue;
     leds[1] = CRGB::Blue;
     FastLED.show();
+    Serial.println("Case 1");
+    CurveLeft();
     break;
 
   case 2:
-    //strat 2
+    //strat 3
     leds[0] = CRGB::Green;
     leds[1] = CRGB::Green;
     FastLED.show();
+    Serial.println("Case 2");
+    CurveRight();
     break; 
   
   case 3:
-    //strat 2
+    //strat 4
     leds[0] = CRGB::Yellow;
     leds[1] = CRGB::Yellow;
     FastLED.show();
+    Serial.println("Case 3");
+    break;
+
+  case 4:
+    //strat 5
+    leds[0] = CRGB::Purple;
+    leds[1] = CRGB::Purple;
+    FastLED.show();
+    Serial.println("Case 4");
+    break;
+
+  case 5:
+    //strat 6
+    leds[0] = CRGB::Orange;
+    leds[1] = CRGB::Orange;
+    FastLED.show();
+    Serial.println("Case 5");
     break;
   }
 }
-
-void CurveLeft(){
-  while (digitalRead(START==HIGH)){
-    Foward(255, 100, 500);
-    Main_Battle();
-  }
-}
-
