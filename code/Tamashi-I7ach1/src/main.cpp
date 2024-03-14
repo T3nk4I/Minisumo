@@ -212,6 +212,13 @@ void CurveRight(){
   }
 }
 
+void Rocket(){
+  while (digitalRead(START==HIGH)){
+    Foward(255, 255, 250);
+    Main_Battle();
+  }
+}
+
 void loop(){
   if(digitalRead(STRAT_SW)==LOW){  //increases value of strat each time the STRAT button is pressed
     delay(150);  //increase delay for more "sensitive" button, decrease for less sensitivity
@@ -254,6 +261,7 @@ void loop(){
     leds[1] = CRGB::Yellow;
     FastLED.show();
     Serial.println("Case 3");
+    Rocket();
     break;
 
   case 4:
