@@ -123,6 +123,8 @@ void SensTest(){
     case 1:
       leds[0] = CRGB::Red;
       FastLED.show();
+      delay(10);
+      FastLED.clear();
       break;
 
     case 2:
@@ -133,21 +135,29 @@ void SensTest(){
     case 4:
       leds[0] = CRGB::Yellow;
       FastLED.show();
+      delay(10);
+      FastLED.clear();
       break;
 
     case 5:
       leds[0] = CRGB::Green;
       FastLED.show();
+      delay(10);
+      FastLED.clear();
       break;
 
     case 8:
       leds[1] = CRGB::Yellow;
       FastLED.show();
+      delay(10);
+      FastLED.clear();
       break;
     
     case 10:
       leds[1] = CRGB::Green;
       FastLED.show();
+      delay(10);
+      FastLED.clear();
       break;
     } 
   }
