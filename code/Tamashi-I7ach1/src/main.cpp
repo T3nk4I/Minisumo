@@ -86,7 +86,7 @@ void Backwards(byte a, byte b, int t){
   delay(t);
 }
 
-void Right(byte a, byte b, int t){
+void Left(byte a, byte b, int t){
   ledcWrite(PWM_MR1, 0);
   ledcWrite(PWM_MR2, a);
   ledcWrite(PWM_ML1, b);
@@ -94,7 +94,7 @@ void Right(byte a, byte b, int t){
   delay(t);
 }
 
-void Left(byte a, byte b, int t){
+void Right (byte a, byte b, int t){
   ledcWrite(PWM_MR1, a);
   ledcWrite(PWM_MR2, 0);
   ledcWrite(PWM_ML1, 0);
@@ -159,6 +159,9 @@ void SensTest(){
       delay(10);
       FastLED.clear();
       break;
+
+    default:
+    FastLED.clear();
     } 
   }
 }
@@ -202,18 +205,20 @@ void Main_Battle(){
     leds[0] = CRGB::Black;
     leds[1] = CRGB::Black;
     FastLED.show();
-    while(LineState()==3){
+    switch(LineState()){
+      case 3:
           switch (SensState()){
-          case 1:
-            Foward(75,100,20); 
-            break;
-          case 2:
-            Foward(100,75,20);
-            break;
+          // case 1:
+          //   Foward(75,100,20); 
+          //   break;
+          // case 2:
+          //   Foward(100,75,20);
+          //   break;
           case 3:
-            for(int i=0; i>=255; i++){
-              Foward(i,i,2);
-            }
+            // for(int i=0; i>=255; i++){
+            //   Foward(i,i,2);
+            // }
+            Foward(50,50,100);
             break;
           case 4:
             Right(255,175,20);
@@ -221,27 +226,31 @@ void Main_Battle(){
           case 8:
             Left(175,255,20);
             break;
-          default:
-            Foward(70,70,10);
-            break;
+          // default:
+          //   Foward(70,70,10);
+          //   break;
           }
-    }
-    if (LineState()==0){
-      Brake(100);
-      Backwards(200,200,175);
-      Right(200,200,180);
-    }
-    else if (LineState()==1){
+          break;
+
+      case 0:
+        Brake(100);
+        Backwards(200,200,175);
+        Right(200,200,180);
+        break; 
+
+      case 1:
         // Right line sensor detecting
         Brake(50);
         Backwards(200,200,100);
         Right(200,200,100);
-    }
-    else if(LineState()==2){
-          // Left line sensor detecting
-          Brake(50);
-          Backwards(200,200,100);
-          Left(200,200,100);
+        break;
+        
+      case 2:
+        // Left line sensor detecting
+        Brake(50);
+        Backwards(200,200,100);
+        Left(200,200,100);
+        break;
     }
   }
   if(digitalRead(START)==LOW){
@@ -250,21 +259,21 @@ void Main_Battle(){
 }
 
 void CurveLeft(){
-  while (digitalRead(START==HIGH)){
+  if (digitalRead(START==HIGH)){
     Foward(255, 100, 500);
     Main_Battle();
   }
 }
 
 void CurveRight(){
-  while (digitalRead(START==HIGH)){
+  if (digitalRead(START==HIGH)){
     Foward(100, 255, 500);
     Main_Battle();
   }
 }
 
 void Rocket(){
-  while (digitalRead(START==HIGH)){
+  if (digitalRead(START==HIGH)){
     Foward(255, 255, 250);
     Main_Battle();
   }
@@ -294,7 +303,7 @@ void loop(){
     leds[1] = CRGB::Blue;
     FastLED.show();
     Serial.println("Case 1");
-    // CurveLeft();
+    CurveLeft();
     break;
 
   case 2:
@@ -303,7 +312,7 @@ void loop(){
     leds[1] = CRGB::Green;
     FastLED.show();
     Serial.println("Case 2");
-    // CurveRight();
+    CurveRight();
     break; 
   
   case 3:
@@ -312,7 +321,7 @@ void loop(){
     leds[1] = CRGB::Yellow;
     FastLED.show();
     Serial.println("Case 3");
-    // Rocket();
+    Rocket();
     break;
 
   case 4:
