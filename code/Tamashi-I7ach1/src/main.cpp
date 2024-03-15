@@ -170,18 +170,18 @@ void LineTest(){
       leds[0] = CRGB::Green;
       leds[1] = CRGB::Green;
       FastLED.show();
-      Serial.println("white white");
+      Serial.println("White White");
       break;
     
     case 1:
       leds[0] = CRGB::Red;
-      leds[1] = CRGB::Black;
+      leds[1] = CRGB::Green;
       FastLED.show();
       Serial.println("Black White");
       break;
 
     case 2:
-      leds[0] = CRGB::Black;
+      leds[0] = CRGB::Green;
       leds[1] = CRGB::Red;
       Serial.println("White Black");
       FastLED.show();
@@ -229,15 +229,16 @@ void Main_Battle(){
     if (LineState()==0){
       Brake(100);
       Backwards(200,200,175);
+      Right(200,200,180);
     }
     else if (LineState()==1){
-        //code 
+        // Right line sensor detecting
         Brake(50);
         Backwards(200,200,100);
         Right(200,200,100);
     }
     else if(LineState()==2){
-          //code
+          // Left line sensor detecting
           Brake(50);
           Backwards(200,200,100);
           Left(200,200,100);
