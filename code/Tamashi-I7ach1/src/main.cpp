@@ -163,6 +163,40 @@ void SensTest(){
   }
 }
 
+void LineTest(){
+  while (digitalRead(START)==HIGH){
+    switch (LineState()){
+    case 0:
+      leds[0] = CRGB::Green;
+      leds[1] = CRGB::Green;
+      FastLED.show();
+      Serial.println("white white");
+      break;
+    
+    case 1:
+      leds[0] = CRGB::Red;
+      leds[1] = CRGB::Black;
+      FastLED.show();
+      Serial.println("Black White");
+      break;
+
+    case 2:
+      leds[0] = CRGB::Black;
+      leds[1] = CRGB::Red;
+      Serial.println("White Black");
+      FastLED.show();
+      break;
+
+    case 3:
+      leds[0] = CRGB::Red;
+      leds[1] = CRGB::Red;
+      FastLED.show();
+      Serial.println("Black Black");
+      break;
+    }
+  }
+}
+
 void Main_Battle(){
   while (digitalRead(START)==HIGH){
     leds[0] = CRGB::Black;
@@ -259,7 +293,7 @@ void loop(){
     leds[1] = CRGB::Blue;
     FastLED.show();
     Serial.println("Case 1");
-    CurveLeft();
+    // CurveLeft();
     break;
 
   case 2:
@@ -268,7 +302,7 @@ void loop(){
     leds[1] = CRGB::Green;
     FastLED.show();
     Serial.println("Case 2");
-    CurveRight();
+    // CurveRight();
     break; 
   
   case 3:
@@ -277,7 +311,7 @@ void loop(){
     leds[1] = CRGB::Yellow;
     FastLED.show();
     Serial.println("Case 3");
-    Rocket();
+    // Rocket();
     break;
 
   case 4:
@@ -286,6 +320,7 @@ void loop(){
     leds[1] = CRGB::Purple;
     FastLED.show();
     Serial.println("Case 4");
+    LineTest();
     break;
 
   case 5:
