@@ -208,27 +208,29 @@ void Main_Battle(){
     switch(LineState()){
       case 3:
           switch (SensState()){
-          // case 1:
-          //   Foward(75,100,20); 
-          //   break;
-          // case 2:
-          //   Foward(100,75,20);
-          //   break;
+          case 1:
+            Foward(75,100,20); 
+            break;
+          case 2:
+            Foward(100,75,20);
+            break;
           case 3:
             // for(int i=0; i>=255; i++){
             //   Foward(i,i,2);
             // }
-            Foward(50,50,100);
+            Foward(100, 100, 100);
             break;
           case 4:
-            Right(255,175,20);
+            Brake(50);
+            Right(255, 175, 80);
             break;
           case 8:
-            Left(175,255,20);
+            Brake(50);
+            Left(175, 255, 80);
             break;
-          // default:
-          //   Foward(70,70,10);
-          //   break;
+          default:
+            Foward(70,70,30);
+            break;
           }
           break;
 
@@ -259,7 +261,7 @@ void Main_Battle(){
 }
 
 void CurveLeft(){
-  if (digitalRead(START==HIGH)){
+  while (digitalRead(START==HIGH)){
     Foward(255, 100, 500);
     Main_Battle();
   }
