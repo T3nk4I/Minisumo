@@ -261,21 +261,21 @@ void Main_Battle(){
 }
 
 void CurveLeft(){
-  while (digitalRead(START==HIGH)){
+  while (digitalRead(START)==HIGH){
     Foward(255, 100, 500);
     Main_Battle();
   }
 }
 
 void CurveRight(){
-  if (digitalRead(START==HIGH)){
+  if (digitalRead(START)==HIGH){
     Foward(100, 255, 500);
     Main_Battle();
   }
 }
 
 void Rocket(){
-  if (digitalRead(START==HIGH)){
+  if (digitalRead(START)==HIGH){
     Foward(255, 255, 250);
     Main_Battle();
   }
