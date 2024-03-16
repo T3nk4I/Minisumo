@@ -218,15 +218,15 @@ void Main_Battle(){
             // for(int i=0; i>=255; i++){
             //   Foward(i,i,2);
             // }
-            Foward(100, 100, 100);
+            Foward(255, 255, 100);
             break;
           case 4:
             Brake(50);
-            Right(255, 175, 80);
+            Right(255, 175, 40);
             break;
           case 8:
             Brake(50);
-            Left(175, 255, 80);
+            Left(175, 255, 40);
             break;
           default:
             Foward(70,70,30);
