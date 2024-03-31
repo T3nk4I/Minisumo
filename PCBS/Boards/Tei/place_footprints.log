@@ -1,0 +1,47 @@
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 641:Plugin executed on: 'win32'
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 642:Plugin executed with python version: '3.9.16 (main, Oct 13 2023, 05:50:11) [MSC v.1936 64 bit (AMD64)]'
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 643:KiCad build version: 7.0.9
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 644:Plugin version: 2.1.2
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 645:Frame repr: <wx._core.Frame object at 0x0000016D961EDE50>
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 121:getting a list of all footprints on board
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J7 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C5 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C3 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J6 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint R5 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J5 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C4 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C1 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J4 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint U1 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint A1 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint R2 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J10 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint D1 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint U2 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint R1 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint SW2 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J2 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint SW1 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint SW3 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J12 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint R4 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C2 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J3 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J8 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J9 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J1 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint R3 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J14 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J13 on root level
+01-16 16:05:12 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J11 on root level
+01-16 16:05:13 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 824:Reference designator is: J
+01-16 16:05:13 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 825:Reference number is: 2
+01-16 16:05:13 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 857:Sorted and filtered list:
+['J1', 'J2', 'J3', 'J4', 'J5', 'J6', 'J7', 'J8', 'J9', 'J10', 'J11', 'J12', 'J13', 'J14']
+01-16 16:05:13 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 358:wx.Colour(240, 240, 240, 255)
+01-16 16:05:45 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 489:'8'
+01-16 16:05:45 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 895:Footprints to place:
+['J2', 'J3', 'J4', 'J5', 'J6', 'J7', 'J8', 'J9', 'J12']
+01-16 16:05:45 com_github_MitjaNemec_PlaceFootprints.place_footprints 367:Starting placing with linear layout
+01-16 16:05:45 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 936:Placing complete
