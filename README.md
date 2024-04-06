@@ -33,6 +33,13 @@ Also anyone interested in making changes or upgrades can do them depending on th
   - JIN: motor bracket compatible for the minisumo robot chasis in this repository, it can hold maxon motors
   - MA-JIN: same as JIN motor bracket, but it can host a qtr-micro line sensor in the back.
 
+# Software that I use
+For the most part I try to make all the files as modifiable as possible, but in some cases like the PCB's it's not that possible, so here's a list of software that you can use for the different extensions and file types in this repo.
+
+- 3D data: I mainly use FUSION360 but I upload the files in .IGES and .STL so you can use any 3D CAD software and slicer software out there to modify and/or print the parts.
+- PCB's: I upload the gerbers in zip format for easy fabrication, I also upload a separate gerber file and BOM for **[JLPCB](https://jlcpcb.com/)**  fabrication. As for modifying the files I use **[Kicad](https://www.kicad.org/)** which is a free and open source EDA.
+- Code: I use Visual Studio Code with the **[PlatformIO](https://platformio.org/)** extension, but the framework I work on is the arduino framework, so you can use the **[ArduinoIDE](https://www.arduino.cc/en/software)** if you want.
+
 ---
 
 Wiki and How to Guides soon.....
