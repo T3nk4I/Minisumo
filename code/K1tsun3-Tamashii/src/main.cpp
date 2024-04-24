@@ -106,9 +106,38 @@ byte sensval(){
   return total;
 }
 
+byte lineval(){
+  bool LINE_R = digitalRead(SENS3);
+  byte LINE_L = digitalRead(SENS4) * 2;
+  byte total = LINE_R + LINE_R;
+}
+
 void loop() {
   while (digitalRead(REMOTE)==HIGH){
+    switch (sensval()){
+    case 0:
+    
+      break;
+    
+    case 1:
 
+      break;
+
+    case 2:
+
+      break;
+
+    case 3:
+      switch (sensval()){
+      case 1:
+        
+        break;
+      
+      default:
+        break;
+      }
+      break;
+    }
   }
   
 }
