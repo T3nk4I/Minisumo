@@ -19,11 +19,29 @@
 #define MB1 5
 #define MB2 6
 #define SERVO 3
-
 Servo FLAG;
+
+// defines remote and button input pin
+#define REMOTE 4
+#define BTN1 2
+#define BTN2 7
+
 
 void setup() {
   FLAG.attach(SERVO);
+  pinMode(SENS0, INPUT);
+  pinMode(SENS1, INPUT);
+  pinMode(SENS2, INPUT);
+  pinMode(SENS3, INPUT);
+  pinMode(SENS4, INPUT);
+  pinMode(SENS5, INPUT);
+  pinMode(SENS6, INPUT);
+  pinMode(SENS7, INPUT);
+  pinMode(SENS8, INPUT);
+  pinMode(SENS9, INPUT);
+
+  pinMode(REMOTE, INPUT);
+
   pinMode(MA1, OUTPUT);
   pinMode(MA2, OUTPUT);
   pinMode(MB1, OUTPUT);
@@ -79,9 +97,19 @@ void right(int a, int b, int t){
   delay(t);
 }
 
+byte sensval(){
+  bool FRONT_R = digitalRead(SENS6);
+  byte FRONT_L = digitalRead(SENS7) * 2;
+  byte RIGHT = digitalRead(SENS5) * 4;
+  byte LEFT = digitalRead(SENS4) *8;
+  byte total = FRONT_R + FRONT_L + RIGHT + LEFT;
+  return total;
+}
+
 void loop() {
-  forwards(255, 255, 1000);
-  stop(100);
-  backwards(500);
+  while (digitalRead(REMOTE)==HIGH){
+
+  }
+  
 }
 
