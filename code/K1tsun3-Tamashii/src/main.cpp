@@ -1,6 +1,19 @@
 #include <Arduino.h>
 #include <Servo.h>
 
+// defines sensor input pins
+#define SENS0 8
+#define SENS1 11
+#define SENS2 12
+#define SENS3 13
+#define SENS4 A0
+#define SENS5 A1
+#define SENS6 A4
+#define SENS7 A5
+#define SENS8 A6 // only analog inputs
+#define SENS9 A7 // only analog inputs
+
+// defines motor and servo output pins
 #define MA1 10
 #define MA2 9
 #define MB1 5
@@ -19,7 +32,7 @@ void setup() {
   Serial.begin(9600);
 }
 
-void paro(int t){
+void stop(int t){
   analogWrite(MA1,255);
   analogWrite(MA2,255);
   analogWrite(MB1,255);
@@ -34,7 +47,7 @@ void off(){
   analogWrite(MB2,0);
 }
 
-void adelante(int a, int b, int t){
+void forwards(int a, int b, int t){
   analogWrite(MA1, a);
   digitalWrite(MA2, LOW);
   analogWrite(MB1, b);
@@ -42,7 +55,7 @@ void adelante(int a, int b, int t){
   delay(t);
 }
 
-void atras(int t){
+void backwards(int t){
   digitalWrite(MA1, LOW);
   analogWrite(MA2, 255);
   digitalWrite(MB1, LOW);
@@ -50,7 +63,7 @@ void atras(int t){
   delay(t);
 }
 
-void izquierda(int a, int b, int t){
+void left(int a, int b, int t){
   analogWrite(MA1,a);
   digitalWrite(MA2, LOW);
   digitalWrite(MB1, LOW);
@@ -58,7 +71,7 @@ void izquierda(int a, int b, int t){
   delay(t);
 }
 
-void derecha(int a, int b, int t){
+void right(int a, int b, int t){
   digitalWrite(MA1, LOW);
   analogWrite(MA2, a);
   analogWrite(MB1, b);
@@ -67,8 +80,8 @@ void derecha(int a, int b, int t){
 }
 
 void loop() {
-  adelante(255, 255, 1000);
-  paro(100);
-  atras(500);
+  forwards(255, 255, 1000);
+  stop(100);
+  backwards(500);
 }
 
