@@ -110,35 +110,38 @@ byte lineval(){
   bool LINE_R = digitalRead(SENS3);
   byte LINE_L = digitalRead(SENS4) * 2;
   byte total = LINE_R + LINE_R;
+  return total;
 }
 
 void loop() {
-  while (digitalRead(REMOTE)==HIGH){
-    switch (sensval()){
-    case 0:
+  forwards(255,255,1000);
+  stop(100);
+  backwards(300);
+  // while (digitalRead(REMOTE)==HIGH){
+  //   switch (sensval()){
+  //   case 0:
     
-      break;
+  //     break;
     
-    case 1:
+  //   case 1:
 
-      break;
+  //     break;
 
-    case 2:
+  //   case 2:
 
-      break;
+  //     break;
 
-    case 3:
-      switch (sensval()){
-      case 1:
+  //   case 3:
+  //     switch (sensval()){
+  //     case 1:
         
-        break;
+  //       break;
       
-      default:
-        break;
-      }
-      break;
-    }
-  }
-  
+  //     default:
+  //       break;
+  //     }
+  //     break;
+  //   }
+  // }
 }
 
