@@ -186,5 +186,8 @@ void loop() {
       break;
     }
   }
+  if (digitalRead(REMOTE)==LOW){
+    off();
+  }
 }
 
