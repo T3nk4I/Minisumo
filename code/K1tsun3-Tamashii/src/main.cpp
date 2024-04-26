@@ -114,34 +114,77 @@ byte lineval(){
 }
 
 void loop() {
-  forwards(255,255,1000);
-  stop(100);
-  backwards(300);
-  // while (digitalRead(REMOTE)==HIGH){
-  //   switch (sensval()){
-  //   case 0:
+  // forwards(255,255,1000);
+  // stop(100);
+  // backwards(300);
+  while (digitalRead(REMOTE)==HIGH){
+    switch (sensval()){
+    case 0:
+      stop(75);
+      backwards(175);
+      right(255, 255, 175);
+      break;
     
-  //     break;
-    
-  //   case 1:
+    case 1:
+      stop(25);
+      backwards(150);
+      right(255, 255, 100);
+      break;
 
-  //     break;
+    case 2:
+      stop(25);
+      backwards(150);
+      left(255, 255, 100);
+      break;
 
-  //   case 2:
+    case 3:
+      switch (sensval()){
+        case 1:
+          adelante(75,100,20);
+          break;
 
-  //     break;
+        case 2:
+          adelante(100,75,20);
+          break;
 
-  //   case 3:
-  //     switch (sensval()){
-  //     case 1:
-        
-  //       break;
-      
-  //     default:
-  //       break;
-  //     }
-  //     break;
-  //   }
-  // }
+        case 3:
+          adelante(255,255,30);
+          break;
+
+        case 4:
+          derecha(255,255,20);
+          break;
+
+        case 5:
+          derecha(255,255,15);
+          break;
+
+        case 7:
+          derecha(255,255,50);
+          break;
+          
+        case 8:
+          izquierda(255,255,20);
+          break;
+
+        case 10:
+          izquierda(255,255,15);
+          break;
+
+        case 11:
+          izquierda(255,255,50);
+          break;
+
+        case 15:
+          adelante(175,175,30);
+          break;
+
+        default:
+          adelante(15,15,5);
+          break;
+      }
+      break;
+    }
+  }
 }
 
