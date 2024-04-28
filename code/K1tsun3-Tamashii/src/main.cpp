@@ -109,7 +109,7 @@ byte sensval(){
 byte lineval(){
   bool LINE_R = digitalRead(SENS3);
   byte LINE_L = digitalRead(SENS0) * 2;
-  byte total = LINE_R + LINE_R;
+  byte total = LINE_R + LINE_L;
   return total;
 }
 
@@ -140,47 +140,47 @@ void loop() {
     case 3:
       switch (sensval()){
         case 1:
-          adelante(75,100,20);
+          forwards(75,100,20);
           break;
 
         case 2:
-          adelante(100,75,20);
+          forwards(100,75,20);
           break;
 
         case 3:
-          adelante(255,255,30);
+          forwards(255,255,30);
           break;
 
         case 4:
-          derecha(255,255,20);
+          right(255,255,20);
           break;
 
         case 5:
-          derecha(255,255,15);
+          right(255,255,15);
           break;
 
         case 7:
-          derecha(255,255,50);
+          right(255,255,50);
           break;
           
         case 8:
-          izquierda(255,255,20);
+          left(255,255,20);
           break;
 
         case 10:
-          izquierda(255,255,15);
+          left(255,255,15);
           break;
 
         case 11:
-          izquierda(255,255,50);
+          left(255,255,50);
           break;
 
         case 15:
-          adelante(175,175,30);
+          forwards(175,175,30);
           break;
 
         default:
-          adelante(15,15,5);
+          forwards(15,15,5);
           break;
       }
       break;
