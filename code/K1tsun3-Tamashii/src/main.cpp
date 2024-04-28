@@ -2,14 +2,14 @@
 #include <Servo.h>
 
 // defines sensor input pins
-#define SENS0 8
-#define SENS1 11
-#define SENS2 12
-#define SENS3 13
-#define SENS4 A0
-#define SENS5 A1
-#define SENS6 A4
-#define SENS7 A5
+#define SENS0 8 // line sensor LEFT
+#define SENS1 11  //left diagonal sensor
+#define SENS2 12  //front left sensor
+#define SENS3 13  //line sensor RIGHT 
+#define SENS4 A0  //right diagonal sensor
+#define SENS5 A1  //front right sensor
+#define SENS6 A4  
+#define SENS7 A5  
 #define SENS8 A6 // only analog inputs
 #define SENS9 A7 // only analog inputs
 
@@ -37,7 +37,7 @@ void setup() {
   pinMode(SENS5, INPUT);
   pinMode(SENS6, INPUT);
   pinMode(SENS7, INPUT);
-  pinMode(SENS8, INPUT);
+  pinMode(SENS8, INPUT); 
   pinMode(SENS9, INPUT);
 
   pinMode(REMOTE, INPUT);
@@ -98,17 +98,17 @@ void right(int a, int b, int t){
 }
 
 byte sensval(){
-  bool FRONT_R = digitalRead(SENS6);
-  byte FRONT_L = digitalRead(SENS7) * 2;
-  byte RIGHT = digitalRead(SENS5) * 4;
-  byte LEFT = digitalRead(SENS4) *8;
+  bool FRONT_R = digitalRead(SENS5);
+  byte FRONT_L = digitalRead(SENS2) * 2;
+  byte RIGHT = digitalRead(SENS3) * 4;
+  byte LEFT = digitalRead(SENS1) *8;
   byte total = FRONT_R + FRONT_L + RIGHT + LEFT;
   return total;
 }
 
 byte lineval(){
   bool LINE_R = digitalRead(SENS3);
-  byte LINE_L = digitalRead(SENS4) * 2;
+  byte LINE_L = digitalRead(SENS0) * 2;
   byte total = LINE_R + LINE_R;
   return total;
 }
