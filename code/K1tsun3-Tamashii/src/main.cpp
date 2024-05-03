@@ -2,14 +2,14 @@
 #include <Servo.h>
 
 // defines sensor input pins
-#define SENS0 8
-#define SENS1 11
-#define SENS2 12
-#define SENS3 13
-#define SENS4 A0
-#define SENS5 A1
-#define SENS6 A4
-#define SENS7 A5
+#define SENS0 8 // line sensor LEFT
+#define SENS1 11  //left diagonal sensor
+#define SENS2 12  //front left sensor
+#define SENS3 13  //line sensor RIGHT 
+#define SENS4 A0  //right diagonal sensor
+#define SENS5 A1  //front right sensor
+#define SENS6 A4  
+#define SENS7 A5  
 #define SENS8 A6 // only analog inputs
 #define SENS9 A7 // only analog inputs
 
@@ -37,7 +37,7 @@ void setup() {
   pinMode(SENS5, INPUT);
   pinMode(SENS6, INPUT);
   pinMode(SENS7, INPUT);
-  pinMode(SENS8, INPUT);
+  pinMode(SENS8, INPUT); 
   pinMode(SENS9, INPUT);
 
   pinMode(REMOTE, INPUT);
@@ -98,50 +98,96 @@ void right(int a, int b, int t){
 }
 
 byte sensval(){
-  bool FRONT_R = digitalRead(SENS6);
-  byte FRONT_L = digitalRead(SENS7) * 2;
-  byte RIGHT = digitalRead(SENS5) * 4;
-  byte LEFT = digitalRead(SENS4) *8;
+  bool FRONT_R = digitalRead(SENS5);
+  byte FRONT_L = digitalRead(SENS2) * 2;
+  byte RIGHT = digitalRead(SENS3) * 4;
+  byte LEFT = digitalRead(SENS1) *8;
   byte total = FRONT_R + FRONT_L + RIGHT + LEFT;
   return total;
 }
 
 byte lineval(){
   bool LINE_R = digitalRead(SENS3);
-  byte LINE_L = digitalRead(SENS4) * 2;
-  byte total = LINE_R + LINE_R;
+  byte LINE_L = digitalRead(SENS0) * 2;
+  byte total = LINE_R + LINE_L;
   return total;
 }
 
 void loop() {
-  forwards(255,255,1000);
-  stop(100);
-  backwards(300);
-  // while (digitalRead(REMOTE)==HIGH){
-  //   switch (sensval()){
-  //   case 0:
+  // forwards(255,255,1000);
+  // stop(100);
+  // backwards(300);
+  while (digitalRead(REMOTE)==HIGH){
+    switch (sensval()){
+    case 0:
+      stop(75);
+      backwards(175);
+      right(255, 255, 175);
+      break;
     
-  //     break;
-    
-  //   case 1:
+    case 1:
+      stop(25);
+      backwards(150);
+      right(255, 255, 100);
+      break;
 
-  //     break;
+    case 2:
+      stop(25);
+      backwards(150);
+      left(255, 255, 100);
+      break;
 
-  //   case 2:
+    case 3:
+      switch (sensval()){
+        case 1:
+          forwards(75,100,20);
+          break;
 
-  //     break;
+        case 2:
+          forwards(100,75,20);
+          break;
 
-  //   case 3:
-  //     switch (sensval()){
-  //     case 1:
-        
-  //       break;
-      
-  //     default:
-  //       break;
-  //     }
-  //     break;
-  //   }
-  // }
+        case 3:
+          forwards(255,255,30);
+          break;
+
+        case 4:
+          right(255,255,20);
+          break;
+
+        case 5:
+          right(255,255,15);
+          break;
+
+        case 7:
+          right(255,255,50);
+          break;
+          
+        case 8:
+          left(255,255,20);
+          break;
+
+        case 10:
+          left(255,255,15);
+          break;
+
+        case 11:
+          left(255,255,50);
+          break;
+
+        case 15:
+          forwards(175,175,30);
+          break;
+
+        default:
+          forwards(15,15,5);
+          break;
+      }
+      break;
+    }
+  }
+  if (digitalRead(REMOTE)==LOW){
+    off();
+  }
 }
 
