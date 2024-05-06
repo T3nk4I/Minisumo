@@ -32,6 +32,10 @@ Also anyone interested in making changes or upgrades can do them depending on th
   - OH: motor bracket compatible for the minisumo robot chasis in this repository, it can hold Jsumo style motors
   - JIN: motor bracket compatible for the minisumo robot chasis in this repository, it can hold maxon motors
   - MA-JIN: same as JIN motor bracket, but it can host a qtr-micro line sensor in the back.
+- Robots
+  - Gyu-Ma-Oh: The base and the chasis files for Gyu-Ma-Oh, 4 oponent sensors and 1 line sensor.
+  - T4nook1: The base and the chasis files for T4nook1, 4 oponent sensors and 2 line sensors.
+  - K1tsun3: The base and the chasis files for K1tsun3, 5 oponent sensors and 2 line sensors.
 
 # Software that I use
 For the most part I try to make all the files as modifiable as possible, but in some cases like the PCB's it's not that possible, so here's a list of software that you can use for the different extensions and file types in this repo.
