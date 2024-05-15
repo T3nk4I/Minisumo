@@ -178,7 +178,8 @@
         }
       ],
       "track_widths": [
-        0.0
+        0.0,
+        0.8
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -476,29 +477,29 @@
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "MOUT",
+        "name": "InputV",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 4.75,
+        "track_width": 1.0,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.4,
+        "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "SPPLY",
+        "name": "Motors",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.5,
+        "track_width": 0.9,
         "via_diameter": 0.8,
-        "via_drill": 0.8,
+        "via_drill": 0.4,
         "wire_width": 6
       }
     ],
@@ -509,11 +510,11 @@
     "netclass_assignments": null,
     "netclass_patterns": [
       {
-        "netclass": "SPPLY",
+        "netclass": "InputV",
         "pattern": "VM"
       },
       {
-        "netclass": "MOUT",
+        "netclass": "Motors",
         "pattern": "Motor Out"
       }
     ]
