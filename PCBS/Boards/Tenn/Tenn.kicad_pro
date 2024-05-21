@@ -630,7 +630,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "./",
     "spice_adjust_passive_values": false,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
@@ -644,7 +644,7 @@
   "sheets": [
     [
       "1ab2dd0d-f75e-4543-92b7-fc9f33e2a62e",
-      ""
+      "Root"
     ]
   ],
   "text_variables": {}
