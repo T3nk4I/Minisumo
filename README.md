@@ -16,7 +16,7 @@ Also anyone interested in making changes or upgrades can do them depending on th
 ## PCB's
 - Main boards:
   - Tei: PCB for minisumo using arduino nano and TB6612FNG
-  - *Tenn: PCB for minisumo using arduino nano and DRV7781 drivers*
+  - Tenn: PCB for minisumo using arduino nano and DRV7781 drivers
   - *Ma: PCB using SMD atmega 328P and DRV7781 drivers*
   - *Jyo: PCB for microsumo using Seeeduino Xiao and DRV7781 drivers*
 - Sensors:
