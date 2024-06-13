@@ -6423,7 +6423,7 @@
 			(uuid "736c98d8-abb2-4b8a-a0b3-853d2a968f9c")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 3.81 270)
+			(at 0 3.81 -90)
 			(layer "F.Fab")
 			(uuid "93c9597a-9e72-4bf4-8436-4356d1099462")
 			(effects
@@ -13793,7 +13793,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "TENN Rev2.0\nby tenn.bots"
+	(gr_text "TENN Rev2.1\nby tenn.bots"
 		(at 145.75 111.75 0)
 		(layer "F.SilkS")
 		(uuid "c4fda8f7-8f24-41c8-8810-3239306b25cd")
