@@ -141,9 +141,6 @@ byte lineval(){
 }
 
 void MainBattle() {
-  // forwards(255,255,1000);
-  // stop(100);
-  // backwards(300);
   while (digitalRead(REMOTE)==HIGH){
     switch (sensval()){
     case 0:
@@ -207,7 +204,11 @@ void MainBattle() {
           break;
 
         default:
-          forwards(15,15,5);
+          switch (rut){
+          default:
+            forwards(15,15,5);
+            break;
+          }
           break;
       }
       break;
@@ -230,13 +231,37 @@ void loop(){
       rut--;
     }
     switch (rut){
-    case 0: //Routine #1;
-      oledWrite("Normal");
-      break;
-    
-    case 1:
-      oledWrite("Rocket");
-      break;
+      case 0: //Routine #1;
+        oledWrite("Normal");
+        break;
+      
+      case 1:
+        oledWrite("Rocket");
+        break;
+      
+      case 2:
+        oledWrite("Curve L");
+        break;
+
+      case 3:
+        oledWrite("Curve R");
+        break;
+
+      case 4:
+        oledWrite("Edging L");
+        break;
+
+      case 5:
+        oledWrite("Edging R");
+        break;
+      
+      case 6:
+        oledWrite("Motor Test");
+        break;
+      
+      case 7:
+        oledWrite("Sensor Test");
+        break;
     }
   }
 }
