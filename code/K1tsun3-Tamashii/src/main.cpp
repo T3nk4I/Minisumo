@@ -1,24 +1,31 @@
 #include <Arduino.h>
 #include <Servo.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128 //defines the width of the OLED screen
+#define SCREEN_HEIGHT 64 //defines the height of the OLED screen
+Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1); //sets up the OLED screen with the defined width and height
 
 // defines sensor input pins
 #define SENS0 8 // line sensor LEFT
-#define SENS1 11  //left diagonal sensor
+#define SENS1 9  //left diagonal sensor
 #define SENS2 12  //front left sensor
 #define SENS3 13  //line sensor RIGHT 
 #define SENS4 A0  //right diagonal sensor
 #define SENS5 A1  //front right sensor
-#define SENS6 A4  
-#define SENS7 A5  
+#define SENS6 A2  
+#define SENS7 A3  
 #define SENS8 A6 // only analog inputs
 #define SENS9 A7 // only analog inputs
 
 // defines motor and servo output pins
-#define MA1 10
-#define MA2 9
-#define MB1 5
-#define MB2 6
-#define SERVO 3
+#define MA1 11
+#define MA2 6
+#define MB1 3
+#define MB2 5
+#define SERVO 10
 Servo FLAG;
 
 // defines remote and button input pin
@@ -26,8 +33,16 @@ Servo FLAG;
 #define BTN1 2
 #define BTN2 7
 
+byte rut;
 
 void setup() {
+  if(!oled.begin(SSD1306_SWITCHCAPVCC, 0x3c)){
+    Serial.println(F("SSD1306 allocation failed"));
+    while (true);
+  }
+  delay(2000);
+  oled.clearDisplay();
+  oled.setCursor(0, 0);
   FLAG.attach(SERVO);
   pinMode(SENS0, INPUT);
   pinMode(SENS1, INPUT);
@@ -41,6 +56,8 @@ void setup() {
   pinMode(SENS9, INPUT);
 
   pinMode(REMOTE, INPUT);
+  pinMode(BTN1, INPUT);
+  pinMode(BTN2, INPUT);
 
   pinMode(MA1, OUTPUT);
   pinMode(MA2, OUTPUT);
@@ -48,6 +65,16 @@ void setup() {
   pinMode(MB2, OUTPUT);
   FLAG.write(0);
   Serial.begin(9600);
+}
+
+void oledWrite(String current_mode) { //function to show on screen the current mode
+  oled.clearDisplay();
+  oled.setTextSize(1);
+  oled.setCursor(0, 20);
+  oled.setTextColor(WHITE);
+  oled.println(current_mode);
+  oled.display();
+  Serial.println(current_mode);
 }
 
 void stop(int t){
@@ -113,7 +140,7 @@ byte lineval(){
   return total;
 }
 
-void loop() {
+void MainBattle() {
   // forwards(255,255,1000);
   // stop(100);
   // backwards(300);
@@ -191,3 +218,25 @@ void loop() {
   }
 }
 
+void loop(){
+  byte totalRoutines = 18; //total of all the routines, change to increase or decrease routine numbers
+  while(rut >= totalRoutines || rut <= 0){
+    if (digitalRead(BTN1)==LOW){  //increase routine cout if button 1 is pressed
+      delay(150); //increase delay for less sensitivity (longer press), decrease for more sensitivity (shorter press)
+      rut++;
+    }
+    if (digitalRead(BTN2)==LOW){  //decrease routine cout if button 2 is pressed
+      delay(150);
+      rut--;
+    }
+    switch (rut){
+    case 0: //Routine #1;
+      oledWrite("Normal");
+      break;
+    
+    case 1:
+      oledWrite("Rocket");
+      break;
+    }
+  }
+}
