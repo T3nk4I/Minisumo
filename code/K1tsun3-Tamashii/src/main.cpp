@@ -69,7 +69,7 @@ void setup() {
 
 void oledWrite(String current_mode) { //function to show on screen the current mode
   oled.clearDisplay();
-  oled.setTextSize(1);
+  oled.setTextSize(3);
   oled.setCursor(0, 20);
   oled.setTextColor(WHITE);
   oled.println(current_mode);
@@ -141,7 +141,7 @@ byte lineval(){
 }
 
 void MainBattle() {
-  while (digitalRead(REMOTE)==HIGH){
+  while (digitalRead(REMOTE) == HIGH){
     switch (sensval()){
     case 0:
       stop(75);
@@ -204,12 +204,7 @@ void MainBattle() {
           break;
 
         default:
-          switch (rut){
-          default:
-            forwards(15,15,5);
-            break;
-          }
-          break;
+          forwards(15,15,5);
       }
       break;
     }
@@ -220,15 +215,26 @@ void MainBattle() {
 }
 
 void loop(){
+  /*
   byte totalRoutines = 18; //total of all the routines, change to increase or decrease routine numbers
+  if (digitalRead(BTN1) == HIGH){
+    delay(200);
+    Serial.println("Button 1 pressed");
+  }
+  else{
+    Serial.println("Button 1 not pressed");
+  }
+  
   while(rut >= totalRoutines || rut <= 0){
-    if (digitalRead(BTN1)==LOW){  //increase routine cout if button 1 is pressed
+    if (digitalRead(BTN1)==HIGH){  //increase routine cout if button 1 is pressed
       delay(150); //increase delay for less sensitivity (longer press), decrease for more sensitivity (shorter press)
       rut++;
+      Serial.println("Button 1 pressed");
     }
-    if (digitalRead(BTN2)==LOW){  //decrease routine cout if button 2 is pressed
+    if (digitalRead(BTN2)==HIGH){  //decrease routine cout if button 2 is pressed
       delay(150);
       rut--;
+      Serial.println("Button 1 pressed");
     }
     switch (rut){
       case 0: //Routine #1;
@@ -264,4 +270,5 @@ void loop(){
         break;
     }
   }
+  */
 }
