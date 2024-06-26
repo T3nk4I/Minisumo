@@ -215,6 +215,7 @@ void MainBattle() {
 }
 
 void loop(){
+  MainBattle();
   /*
   byte totalRoutines = 18; //total of all the routines, change to increase or decrease routine numbers
   if (digitalRead(BTN1) == HIGH){
