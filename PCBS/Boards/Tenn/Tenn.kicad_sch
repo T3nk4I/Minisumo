@@ -3190,6 +3190,88 @@
 				)
 			)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 		(symbol "Regulator_Linear:L7805"
 			(pin_names
 				(offset 0.254)
@@ -6067,6 +6149,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 198.12 49.53 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0d54ca0a-33d1-4224-89f6-e4be82fb8c07")
+		(property "Reference" "H4"
+			(at 200.66 48.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 200.66 50.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_ISO7380"
+			(at 198.12 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 198.12 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 198.12 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Tenn"
+				(path "/1ab2dd0d-f75e-4543-92b7-fc9f33e2a62e"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 97.79 137.16 270)
 		(mirror x)
@@ -8890,26 +9036,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 99.06 160.02 90)
+		(lib_id "Mechanical:MountingHole")
+		(at 198.12 34.29 0)
 		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
+		(exclude_from_sim yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8a84af59-84ff-4b6d-bfc0-18bc90974d21")
-		(property "Reference" "#PWR034"
-			(at 102.87 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 95.25 160.0199 90)
+		(uuid "8a894b98-e2e4-4652-8459-1ca53d8aeeef")
+		(property "Reference" "H1"
+			(at 200.66 33.0199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8917,8 +9054,17 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 99.06 160.02 0)
+		(property "Value" "MountingHole"
+			(at 200.66 35.5599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_ISO7380"
+			(at 198.12 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8926,8 +9072,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 99.06 160.02 0)
+		(property "Datasheet" "~"
+			(at 198.12 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8935,28 +9081,19 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 99.06 160.02 0)
+		(property "Description" "Mounting Hole without connection"
+			(at 198.12 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "1"
-			(uuid "9b1697dc-397d-4b2b-abf3-c608f9cbe94b")
 		)
 		(instances
 			(project "Tenn"
 				(path "/1ab2dd0d-f75e-4543-92b7-fc9f33e2a62e"
-					(reference "#PWR034")
-					(unit 1)
-				)
-			)
-			(project "Ari"
-				(path "/ed17b37f-ebc0-424a-9c7e-09f3b83ce6bb"
-					(reference "#PWR0101")
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -8988,7 +9125,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPDT_PCM12"
+		(property "Footprint" "Button_Switch_THT:SW_Slide_SPDT_Straight_CK_OS102011MS2Q"
 			(at 69.85 48.26 0)
 			(effects
 				(font
@@ -9839,6 +9976,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VCC")
+		(at 99.06 160.02 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a5b7dbb4-ebe7-4ecd-b079-46f869db78d1")
+		(property "Reference" "#PWR034"
+			(at 102.87 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VCC"
+			(at 95.25 160.0199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 99.06 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2f0c42c5-b923-4719-bbb3-a012390520b0")
+		)
+		(instances
+			(project "Tenn"
+				(path "/1ab2dd0d-f75e-4543-92b7-fc9f33e2a62e"
+					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 148.59 52.07 90)
 		(unit 1)
@@ -10497,6 +10701,70 @@
 			(project "Ari"
 				(path "/ed17b37f-ebc0-424a-9c7e-09f3b83ce6bb"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 198.12 44.45 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c0f5f589-50bf-4a15-a42f-c477f11679fc")
+		(property "Reference" "H3"
+			(at 200.66 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 200.66 45.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_ISO7380"
+			(at 198.12 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 198.12 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 198.12 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Tenn"
+				(path "/1ab2dd0d-f75e-4543-92b7-fc9f33e2a62e"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -11488,6 +11756,70 @@
 			(project "Ari"
 				(path "/ed17b37f-ebc0-424a-9c7e-09f3b83ce6bb"
 					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 198.12 39.37 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea017895-0aea-47b4-aa56-df6fc4542746")
+		(property "Reference" "H2"
+			(at 200.66 38.0999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 200.66 40.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_ISO7380"
+			(at 198.12 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 198.12 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 198.12 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Tenn"
+				(path "/1ab2dd0d-f75e-4543-92b7-fc9f33e2a62e"
+					(reference "H2")
 					(unit 1)
 				)
 			)
