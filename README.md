@@ -1,6 +1,6 @@
 # Minisumo
 Code and Files for all the minisumo and sumo related projects I make, this repository includes codes, schematics, drawings, 3D files and more to make your own minisumo robot.\
-**Important: These are mostly personal projects, there might be some errors that will be fixed and updated, but I'm not responsable for any damage or malfunction that is caused by using the codes, files, etc. provided in this repository**
+**Important: These are mostly personal projects, there might be some errors that will be fixed and updated, but I'm not responsable for any damage or malfunction that is caused by using the codes, files, etc. provided in this repository. If you find any errors in my code, PCBs, or any improvements in the 3D designs feel free to comment so I can correct the design, you can also make a pull request**
 
 *The projects marked in italic are projects that are still on progress*
 
@@ -10,9 +10,6 @@ Also anyone interested in making changes or upgrades can do them depending on th
 
 # Folders
 
-## Minisumo Robots
-- Gyu-Ma-Oh: Basic Minisumo with 4 opponent sensors and 1 Line sensor
-- T4nook1: Advanced Minisumo with 5 opponent sensors and 2 line sensors
 ## PCB's
 - Main boards:
   - Tei: PCB for minisumo using arduino nano and TB6612FNG
