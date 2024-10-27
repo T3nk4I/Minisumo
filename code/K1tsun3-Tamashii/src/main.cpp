@@ -23,17 +23,18 @@ Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1); //sets up the OLE
 // defines motor and servo output pins
 #define MA1 11
 #define MA2 6
-#define MB1 3
-#define MB2 5
+#define MB2 3
+#define MB1 5
 #define SERVO 10
 Servo FLAG;
 
 // defines remote and button input pin
 #define REMOTE 4
-#define BTN1 2
-#define BTN2 7
+#define BTN2 2
+#define BTN1 7
 
-byte rut;
+byte rut = 1;
+bool test_mode;
 
 void setup() {
   if(!oled.begin(SSD1306_SWITCHCAPVCC, 0x3c)){
@@ -56,14 +57,14 @@ void setup() {
   pinMode(SENS9, INPUT);
 
   pinMode(REMOTE, INPUT);
-  pinMode(BTN1, INPUT);
-  pinMode(BTN2, INPUT);
+  pinMode(BTN1, INPUT_PULLUP);
+  pinMode(BTN2, INPUT_PULLUP);
 
   pinMode(MA1, OUTPUT);
   pinMode(MA2, OUTPUT);
   pinMode(MB1, OUTPUT);
   pinMode(MB2, OUTPUT);
-  FLAG.write(0);
+  FLAG.write(90);
   Serial.begin(9600);
 }
 
@@ -100,11 +101,11 @@ void forwards(int a, int b, int t){
   delay(t);
 }
 
-void backwards(int t){
+void backwards(int a, int b, int t){
   digitalWrite(MA1, LOW);
-  analogWrite(MA2, 255);
+  analogWrite(MA2, a);
   digitalWrite(MB1, LOW);
-  analogWrite(MB2, 255);
+  analogWrite(MB2, b);
   delay(t);
 }
 
@@ -125,39 +126,40 @@ void right(int a, int b, int t){
 }
 
 byte sensval(){
-  bool FRONT_R = digitalRead(SENS5);
-  byte FRONT_L = digitalRead(SENS2) * 2;
-  byte RIGHT = digitalRead(SENS3) * 4;
-  byte LEFT = digitalRead(SENS1) *8;
+  bool FRONT_R = !digitalRead(SENS3);
+  byte FRONT_L = !digitalRead(SENS0) * 2;
+  byte RIGHT = digitalRead(SENS5) * 4;
+  byte LEFT = digitalRead(SENS2) *8;
   byte total = FRONT_R + FRONT_L + RIGHT + LEFT;
   return total;
 }
 
 byte lineval(){
-  bool LINE_R = digitalRead(SENS3);
-  byte LINE_L = digitalRead(SENS0) * 2;
+  bool LINE_R = digitalRead(SENS4);
+  byte LINE_L = digitalRead(SENS1) * 2;
   byte total = LINE_R + LINE_L;
   return total;
 }
 
 void MainBattle() {
   while (digitalRead(REMOTE) == HIGH){
-    switch (sensval()){
+    FLAG.write(180);
+    switch (lineval()){
     case 0:
       stop(75);
-      backwards(175);
+      backwards(175,175,100);
       right(255, 255, 175);
       break;
     
     case 1:
       stop(25);
-      backwards(150);
+      backwards(175,175,70);
       right(255, 255, 100);
       break;
 
     case 2:
       stop(25);
-      backwards(150);
+      backwards(175,175,70);
       left(255, 255, 100);
       break;
 
@@ -204,7 +206,15 @@ void MainBattle() {
           break;
 
         default:
-          forwards(15,15,5);
+          switch (rut){
+          case 9:
+            right(50,50,20); 
+            break;
+          
+          default:
+            forwards(75,75,5);
+            break;
+          }
       }
       break;
     }
@@ -214,62 +224,111 @@ void MainBattle() {
   }
 }
 
-void loop(){
-  MainBattle();
-  /*
-  byte totalRoutines = 18; //total of all the routines, change to increase or decrease routine numbers
-  if (digitalRead(BTN1) == HIGH){
-    delay(200);
-    Serial.println("Button 1 pressed");
+void rocket(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(255,255,755);
+    MainBattle();
   }
-  else{
-    Serial.println("Button 1 not pressed");
+  off();
+}
+
+void motortest(){
+  while (digitalRead(REMOTE)==HIGH){
+    for(int i = 0; i<=255; i++){
+      forwards(i,i,10);
+    }
+    for(int i = 0; i<=255; i++){
+      backwards(i,i,10);
+    }
+    for(int i = 0; i<=255; i++){
+      right(i,i,10);
+    }
+    for(int i = 0; i<=255; i++){
+      left(i,i,10);
+    }
   }
   
-  while(rut >= totalRoutines || rut <= 0){
-    if (digitalRead(BTN1)==HIGH){  //increase routine cout if button 1 is pressed
-      delay(150); //increase delay for less sensitivity (longer press), decrease for more sensitivity (shorter press)
-      rut++;
-      Serial.println("Button 1 pressed");
+}
+
+void sensor_test(){
+  while (digitalRead(REMOTE)==HIGH){
+    if(digitalRead(BTN1)==HIGH){
+      test_mode = true;
     }
-    if (digitalRead(BTN2)==HIGH){  //decrease routine cout if button 2 is pressed
-      delay(150);
-      rut--;
-      Serial.println("Button 1 pressed");
+    if(digitalRead(BTN2)==HIGH){
+      test_mode = false;
     }
-    switch (rut){
-      case 0: //Routine #1;
-        oledWrite("Normal");
-        break;
-      
-      case 1:
-        oledWrite("Rocket");
-        break;
-      
-      case 2:
-        oledWrite("Curve L");
-        break;
-
-      case 3:
-        oledWrite("Curve R");
-        break;
-
-      case 4:
-        oledWrite("Edging L");
-        break;
-
-      case 5:
-        oledWrite("Edging R");
-        break;
-      
-      case 6:
-        oledWrite("Motor Test");
-        break;
-      
-      case 7:
-        oledWrite("Sensor Test");
-        break;
+    switch (test_mode){
+    case 0:
+      oledWrite(String(sensval()));
+      break;
+    
+    case 1:
+      oledWrite(String(lineval()));
+      break;
     }
   }
-  */
+}
+
+void loop(){
+  byte totalRoutines = 18; //total of all the routines, change to increase or decrease routine numbers
+  off();
+  FLAG.write(90);
+  if (digitalRead(BTN1)==HIGH){  //increase routine cout if button 1 is pressed
+    delay(150); //increase delay for less sensitivity (longer press), decrease for more sensitivity (shorter press)
+    rut++;
+    Serial.println("Button 1 pressed");
+    if(rut>=10){
+      rut=0;
+    }
+  }
+  if (digitalRead(BTN2)==HIGH){  //decrease routine cout if button 2 is pressed
+    delay(150);
+    rut--;
+    Serial.println("Button 2 pressed");
+    if(rut<=0){
+      rut=8;
+    }       
+  }
+  switch (rut){
+    case 1: //Routine #1;
+      oledWrite("Normal");
+      MainBattle();
+      break;
+    
+    case 2:
+      oledWrite("Rocket");
+      rocket();
+      break;
+    
+    case 3:
+      oledWrite("Curve L");
+      break;
+
+    case 4:
+      oledWrite("Curve R");
+      break;
+
+    case 5:
+      oledWrite("Edging L");
+      break;
+
+    case 6:
+      oledWrite("Edging R");
+      break;
+
+    case 7:
+      oledWrite("Mexican");
+      break;
+    
+    case 8:
+      oledWrite("Motor Test");
+      motortest();
+      break;
+    
+    case 9:
+      oledWrite("Sensor Test");
+      sensor_test();
+      break;
+  }
 }
