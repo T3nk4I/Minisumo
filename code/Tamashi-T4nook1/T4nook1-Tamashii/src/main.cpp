@@ -21,10 +21,10 @@ Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1); //sets up the OLE
 #define SENS9 A7 // only analog inputs
 
 // defines motor and servo output pins
-#define MA1 11
-#define MA2 6
-#define MB2 5
-#define MB1 3
+#define MA1 6
+#define MA2 11
+#define MB2 3
+#define MB1 5
 #define SERVO 10
 Servo FLAG;
 
@@ -144,7 +144,7 @@ byte lineval(){
 
 void MainBattle() {
   while (digitalRead(REMOTE) == HIGH){
-    FLAG.write(ang);
+    FLAG.write(180);
     switch (lineval()){
     case 0:
       backwards(175,175,100);
@@ -226,7 +226,6 @@ void MainBattle() {
 void rocket(){
   while (digitalRead(REMOTE)==HIGH){
     forwards(225,255,200);
-    ang = 180;
     MainBattle();
   }
   off();
@@ -235,7 +234,6 @@ void rocket(){
 void curveL(){
   while (digitalRead(REMOTE)==HIGH){
     forwards(225,25,400);
-    ang = 180;
     MainBattle();
   }
   off();
@@ -244,7 +242,6 @@ void curveL(){
 void curveR(){
   while (digitalRead(REMOTE)==HIGH){
     forwards(25,225,400);
-    ang = 0;
     MainBattle();
   }
   off();
@@ -254,7 +251,6 @@ void edgingL(){
   while (digitalRead(REMOTE)==HIGH){
     forwards(175,175,275);
     right(255,255,150);
-    ang = 180;
     MainBattle();
   }
   off();
@@ -264,7 +260,6 @@ void edgingR(){
   while (digitalRead(REMOTE)==HIGH){
     forwards(175,175,275);
     left(255,255,150);
-    ang = 0;
     MainBattle();
   }
   off();
