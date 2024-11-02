@@ -35,6 +35,7 @@ Servo FLAG;
 
 byte rut = 1;
 bool test_mode;
+int ang;
 
 void setup() {
   if(!oled.begin(SSD1306_SWITCHCAPVCC, 0x3c)){
@@ -143,22 +144,19 @@ byte lineval(){
 
 void MainBattle() {
   while (digitalRead(REMOTE) == HIGH){
-    FLAG.write(180);
+    FLAG.write(ang);
     switch (lineval()){
     case 0:
-      stop(75);
       backwards(175,175,100);
       right(255, 255, 175);
       break;
     
     case 1:
-      stop(25);
       backwards(175,175,70);
       right(255, 255, 100);
       break;
 
     case 2:
-      stop(25);
       backwards(175,175,70);
       left(255, 255, 100);
       break;
@@ -207,12 +205,13 @@ void MainBattle() {
 
         default:
           switch (rut){
-          case 9:
+          case 7:
             right(50,50,20); 
             break;
           
           default:
-            forwards(75,75,5);
+            forwards(40,25,80);
+            delay(200);
             break;
           }
       }
@@ -226,7 +225,46 @@ void MainBattle() {
 
 void rocket(){
   while (digitalRead(REMOTE)==HIGH){
-    forwards(255,255,755);
+    forwards(225,255,200);
+    ang = 180;
+    MainBattle();
+  }
+  off();
+}
+
+void curveL(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(225,25,400);
+    ang = 180;
+    MainBattle();
+  }
+  off();
+}
+
+void curveR(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(25,225,400);
+    ang = 0;
+    MainBattle();
+  }
+  off();
+}
+
+void edgingL(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(175,175,275);
+    right(255,255,150);
+    ang = 180;  //left
+    MainBattle();
+  }
+  off();
+}
+
+void edgingR(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(175,175,275);
+    left(255,255,150);
+    ang = 0;  //right
     MainBattle();
   }
   off();
@@ -271,7 +309,6 @@ void sensor_test(){
 }
 
 void loop(){
-  byte totalRoutines = 18; //total of all the routines, change to increase or decrease routine numbers
   off();
   FLAG.write(90);
   if (digitalRead(BTN1)==HIGH){  //increase routine cout if button 1 is pressed
@@ -303,22 +340,27 @@ void loop(){
     
     case 3:
       oledWrite("Curve L");
+      curveL();
       break;
 
     case 4:
       oledWrite("Curve R");
+      curveR();
       break;
 
     case 5:
       oledWrite("Edging L");
+      edgingL();
       break;
 
     case 6:
       oledWrite("Edging R");
+      edgingR();
       break;
 
     case 7:
       oledWrite("Mexican");
+      MainBattle();
       break;
     
     case 8:
@@ -329,6 +371,10 @@ void loop(){
     case 9:
       oledWrite("Sensor Test");
       sensor_test();
+      break;
+
+    case 10:
+      oledWrite("self_destruct");
       break;
   }
 }
