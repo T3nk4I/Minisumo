@@ -210,8 +210,7 @@ void MainBattle() {
             break;
           
           default:
-            forwards(40,25,80);
-            delay(200);
+            forwards(20,17,1);
             break;
           }
       }
@@ -278,6 +277,26 @@ void robotrick(){
   while (digitalRead(REMOTE)==HIGH){
     forwards(225,255,125);
     left(255,255,220);
+    FLAG.write(ang);
+    MainBattle();
+  }
+  off();
+}
+
+void b2b(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(225,255,200);
+    left(255,255,220);
+    FLAG.write(ang);
+    MainBattle();
+  }
+  off();
+}
+
+void s2s(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(225,255,180);
+    right(255,255,220);
     FLAG.write(ang);
     MainBattle();
   }
@@ -409,6 +428,18 @@ void loop(){
       break;
 
     case 13:
+      oledWrite("b2b");
+      ang = 0;
+      b2b();
+      break;
+
+    case 14:
+      oledWrite("s2s");
+      ang = 0;
+      s2s();
+      break;
+    
+    case 15:
       oledWrite("self_destruct");
       break;
   }
