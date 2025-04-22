@@ -210,8 +210,7 @@ void MainBattle() {
             break;
           
           default:
-            forwards(40,25,80);
-            delay(200);
+            forwards(20,17,1);
             break;
           }
       }
@@ -227,35 +226,25 @@ void rocket(){
   while (digitalRead(REMOTE)==HIGH){
     forwards(225,255,200);
     ang = 180;
-    while(true){
-      stop(1);
-    }
-    
-    //MainBattle();
+    MainBattle();
   }
   off();
 }
 
 void curveL(){
   while (digitalRead(REMOTE)==HIGH){
-    forwards(225,25,400);
+    forwards(255,20,325);
     ang = 180;
-    while(true){
-      stop(1);
-    }
-    //MainBattle();
+    MainBattle();
   }
   off();
 }
 
 void curveR(){
   while (digitalRead(REMOTE)==HIGH){
-    forwards(25,225,400);
+    forwards(20,255,325);
     ang = 0;
-    while(true){
-      stop(1);
-    }
-    //MainBattle();
+    MainBattle();
   }
   off();
 }
@@ -267,10 +256,7 @@ void edgingL(){
     right(255,255,150);
     FLAG.write(0);
     ang = 0;
-    while(true){
-      stop(1);
-    }
-    //MainBattle();
+    MainBattle();
   }
   off();
 }
@@ -282,10 +268,37 @@ void edgingR(){
     left(255,255,150);
     FLAG.write(180);
     ang = 180;
-    while(true){
-      stop(1);
-    }
-    //MainBattle();
+    MainBattle();
+  }
+  off();
+}
+
+void robotrick(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(225,255,125);
+    left(255,255,220);
+    FLAG.write(ang);
+    MainBattle();
+  }
+  off();
+}
+
+void b2b(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(225,255,200);
+    left(255,255,220);
+    FLAG.write(ang);
+    MainBattle();
+  }
+  off();
+}
+
+void s2s(){
+  while (digitalRead(REMOTE)==HIGH){
+    forwards(225,255,180);
+    right(255,255,220);
+    FLAG.write(ang);
+    MainBattle();
   }
   off();
 }
@@ -335,7 +348,7 @@ void loop(){
     delay(150); //increase delay for less sensitivity (longer press), decrease for more sensitivity (shorter press)
     rut++;
     Serial.println("Button 1 pressed");
-    if(rut>=12){
+    if(rut>=14){
       rut=1;
     }
   }
@@ -344,7 +357,7 @@ void loop(){
     rut--;
     Serial.println("Button 2 pressed");
     if(rut<=0){
-      rut=11;
+      rut=14;
     }       
   }
   switch (rut){
@@ -366,12 +379,14 @@ void loop(){
       break;
     
     case 4:
-      oledWrite("Curve L");
+      oledWrite("Curve L"); //works
+      ang = 180;
       curveL();
       break;
 
     case 5:
-      oledWrite("Curve R");
+      oledWrite("Curve R"); //works
+      ang = 0;
       curveR();
       break;
 
@@ -389,18 +404,42 @@ void loop(){
       oledWrite("Mexican"); //works
       MainBattle();
       break;
-    
+
     case 9:
+      oledWrite("Robotrick_R"); //works
+      ang = 0;
+      robotrick();
+      break;
+    
+    case 10:
+      oledWrite("Robotrick_L"); //works
+      ang = 180;
+      robotrick();
+      break;
+
+    case 11:
       oledWrite("Motor Test");
       motortest();
       break;
     
-    case 10:
+    case 12:
       oledWrite("Sensor Test");
       sensor_test();
       break;
 
-    case 11:
+    case 13:
+      oledWrite("b2b");
+      ang = 0;
+      b2b();
+      break;
+
+    case 14:
+      oledWrite("s2s");
+      ang = 0;
+      s2s();
+      break;
+    
+    case 15:
       oledWrite("self_destruct");
       break;
   }

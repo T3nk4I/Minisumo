@@ -23,8 +23,8 @@ Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1); //sets up the OLE
 // defines motor and servo output pins
 #define MA1 11
 #define MA2 6
-#define MB2 5
-#define MB1 3
+#define MB2 3
+#define MB1 5
 #define SERVO 10
 Servo FLAG;
 
@@ -254,7 +254,7 @@ void edgingL(){
   while (digitalRead(REMOTE)==HIGH){
     forwards(175,175,275);
     right(255,255,150);
-    ang = 180;
+    ang = 180;  //left
     MainBattle();
   }
   off();
@@ -264,7 +264,7 @@ void edgingR(){
   while (digitalRead(REMOTE)==HIGH){
     forwards(175,175,275);
     left(255,255,150);
-    ang = 0;
+    ang = 0;  //right
     MainBattle();
   }
   off();
@@ -315,8 +315,8 @@ void loop(){
     delay(150); //increase delay for less sensitivity (longer press), decrease for more sensitivity (shorter press)
     rut++;
     Serial.println("Button 1 pressed");
-    if(rut>=10){
-      rut=0;
+    if(rut>=12){
+      rut=1;
     }
   }
   if (digitalRead(BTN2)==HIGH){  //decrease routine cout if button 2 is pressed
@@ -324,56 +324,63 @@ void loop(){
     rut--;
     Serial.println("Button 2 pressed");
     if(rut<=0){
-      rut=8;
+      rut=11;
     }       
   }
   switch (rut){
     case 1: //Routine #1;
-      oledWrite("Normal");
+      oledWrite("Normal FR");
+      ang = 0;
       MainBattle();
       break;
-    
+
     case 2:
+      oledWrite("Normal FL");
+      ang = 180;
+      MainBattle();
+      break;
+
+    case 3:
       oledWrite("Rocket");
       rocket();
       break;
     
-    case 3:
+    case 4:
       oledWrite("Curve L");
       curveL();
       break;
 
-    case 4:
+    case 5:
       oledWrite("Curve R");
       curveR();
       break;
 
-    case 5:
+    case 6:
       oledWrite("Edging L");
       edgingL();
       break;
 
-    case 6:
+    case 7:
       oledWrite("Edging R");
       edgingR();
       break;
 
-    case 7:
+    case 8:
       oledWrite("Mexican");
       MainBattle();
       break;
     
-    case 8:
+    case 9:
       oledWrite("Motor Test");
       motortest();
       break;
     
-    case 9:
+    case 10:
       oledWrite("Sensor Test");
       sensor_test();
       break;
 
-    case 10:
+    case 11:
       oledWrite("self_destruct");
       break;
   }

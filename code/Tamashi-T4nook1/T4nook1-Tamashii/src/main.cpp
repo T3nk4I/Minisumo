@@ -233,7 +233,7 @@ void rocket(){
 
 void curveL(){
   while (digitalRead(REMOTE)==HIGH){
-    forwards(225,25,400);
+    forwards(255,25,350);
     MainBattle();
   }
   off();
@@ -241,7 +241,7 @@ void curveL(){
 
 void curveR(){
   while (digitalRead(REMOTE)==HIGH){
-    forwards(25,225,400);
+    forwards(25,255,350);
     MainBattle();
   }
   off();
@@ -249,7 +249,8 @@ void curveR(){
 
 void edgingL(){
   while (digitalRead(REMOTE)==HIGH){
-    forwards(175,175,275);
+    left(255,255,50);
+    forwards(225,255,150);
     right(255,255,150);
     MainBattle();
   }
@@ -258,7 +259,8 @@ void edgingL(){
 
 void edgingR(){
   while (digitalRead(REMOTE)==HIGH){
-    forwards(175,175,275);
+    right(255,255,50);
+    forwards(225,255,135);
     left(255,255,150);
     MainBattle();
   }

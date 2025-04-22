@@ -13,7 +13,7 @@ Also anyone interested in making changes or upgrades can do them depending on th
 ## PCB's
 - Main boards:
   - Tei: PCB for minisumo using arduino nano and TB6612FNG
-  - *Tenn: PCB for minisumo using arduino nano and DRV7781 drivers*
+  - Tenn: PCB for minisumo using arduino nano and DRV7781 drivers*
   - Inn BEC: Battery Eliminator Circuit, (AKA buck converter) using XL1509 IC, supports up to 36V and has 5V output, also has a L7805 footprint in the back so it can be adaptable.
   - *Ma: PCB using SMD atmega 328P and DRV7781 drivers*
   - *Jyo: PCB for microsumo using Seeeduino Xiao and DRV7781 drivers*
@@ -24,10 +24,11 @@ Also anyone interested in making changes or upgrades can do them depending on th
 - *SumoESP: minisumo code for the Arduino Nano ESP model*
 - Tamashi-I7ach1: main code used for minisumo robot I7ach1 which uses a ESP32-C3 as the main board
 - Tamashi-T4nook1: main code used for minisumo robot T4nook1 which uses a atmega328p as the main controller
+- Tamashi-K1tsun3: main code used for minisumo robot K1tsun3 which uses a atmega328p as the main controller
 ## 3D Data
 - Flag System: DAMASHI-FLAG-SYSTEM, used for minisumo robots, compatible with the "OH", "JIN" and "MA-JIN" motor brackets.
 - Motor brackets:
-  - OH: motor bracket compatible for the minisumo robot chasis in this repository, it can hold Jsumo style motors
+  - OH: motor bracket compatible for the minisumo robot chasis in this repository, it can hold 050 style motors
   - JIN: motor bracket compatible for the minisumo robot chasis in this repository, it can hold maxon motors
   - MA-JIN: same as JIN motor bracket, but it can host a qtr-micro line sensor in the back.
 - Robots
