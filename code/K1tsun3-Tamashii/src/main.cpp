@@ -205,12 +205,25 @@ void MainBattle() {
 
         default:
           switch (rut){
-          case 7:
+          case 8:
             right(50,50,20); 
             break;
+
+          case 9:
+            forwards(12,10,1);
+            break;
           
+          case 10:
+            forwards(15,11,1);
+            break;
+
+          case 15:
+            forwards(75,69,80);
+            stop(70);
+            break;
+
           default:
-            forwards(20,17,1);
+            forwards(30,27,1);
             break;
           }
       }
@@ -252,10 +265,11 @@ void curveR(){
 void edgingL(){
   while (digitalRead(REMOTE)==HIGH){
     left(255,255,50);
-    forwards(225,255,150);
+    forwards(225,255,170);
     right(255,255,150);
     FLAG.write(0);
     ang = 0;
+    stop(20);
     MainBattle();
   }
   off();
@@ -263,11 +277,12 @@ void edgingL(){
 
 void edgingR(){
   while (digitalRead(REMOTE)==HIGH){
-    right(255,255,50);
-    forwards(225,255,135);
+    right(255,255,60);
+    forwards(225,255,170);
     left(255,255,150);
     FLAG.write(180);
     ang = 180;
+    stop(20);
     MainBattle();
   }
   off();
@@ -281,6 +296,26 @@ void robotrick(){
     MainBattle();
   }
   off();
+}
+
+void sideAttackR(){
+  while (digitalRead(REMOTE)==HIGH){
+    right(100, 100, 12);
+    forwards(200,255,200);
+    FLAG.write(180);
+    left(255,255,180);
+    MainBattle();
+  }
+}
+
+void sideAttackL(){
+  while (digitalRead(REMOTE)==HIGH){
+    left(100, 100, 12);
+    forwards(255,200,200);
+    FLAG.write(0);
+    right(255,255,180);
+    MainBattle();
+  }
 }
 
 void b2b(){
@@ -348,7 +383,7 @@ void loop(){
     delay(150); //increase delay for less sensitivity (longer press), decrease for more sensitivity (shorter press)
     rut++;
     Serial.println("Button 1 pressed");
-    if(rut>=14){
+    if(rut>=16){
       rut=1;
     }
   }
@@ -357,7 +392,7 @@ void loop(){
     rut--;
     Serial.println("Button 2 pressed");
     if(rut<=0){
-      rut=14;
+      rut=15;
     }       
   }
   switch (rut){
@@ -428,19 +463,30 @@ void loop(){
       break;
 
     case 13:
+      oledWrite("woodpecker");
+      MainBattle();
+      break;
+
+    case 14:
+      oledWrite("Side Attack R");
+      sideAttackR();
+      break;
+
+    case 15:
+      oledWrite("Side Attack L");
+      sideAttackL();
+      break;
+
+    case 16:
       oledWrite("b2b");
       ang = 0;
       b2b();
       break;
 
-    case 14:
+    case 17:
       oledWrite("s2s");
       ang = 0;
       s2s();
-      break;
-    
-    case 15:
-      oledWrite("self_destruct");
       break;
   }
 }
