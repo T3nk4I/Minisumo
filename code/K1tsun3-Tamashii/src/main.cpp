@@ -76,7 +76,7 @@ void oledWrite(String current_mode) { //function to show on screen the current m
   oled.setTextColor(WHITE);
   oled.println(current_mode);
   oled.display();
-  Serial.println(current_mode);
+  //Serial.println(current_mode);
 }
 
 void stop(int t){
