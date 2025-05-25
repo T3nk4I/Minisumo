@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include <FastLED.h>
-#define LED_Pin 20
+#define LED_Pin 04
 #define LED_Type WS2812
-#define LINE_L 4
-#define LINE_R 21
+#define LINE_L 20
+#define LINE_R 9
 #define FRONT_L 2
 #define FRONT_R 1
 #define DIAG_L 3 
@@ -16,8 +16,8 @@
 #define PWM_MR2 1
 #define PWM_ML1 2
 #define PWM_ML2 3
-#define STRAT_SW 8
-#define START 9
+#define STRAT_SW 21
+#define START 8
 #define freq 1000
 
 CRGB leds[2]; 
@@ -282,7 +282,7 @@ void Rocket(){
 }
 
 void loop(){
-  if(digitalRead(STRAT_SW)==LOW){  //increases value of strat each time the STRAT button is pressed
+  if(digitalRead(STRAT_SW)==HIGH){  //increases value of strat each time the STRAT button is pressed
     delay(150);  //increase delay for more "sensitive" button, decrease for less sensitivity
     strat ++;
     if (strat > 5){
