@@ -9,14 +9,14 @@
 Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1); //sets up the OLED screen with the defined width and height
 
 // defines sensor input pins
-#define SENS0 8   //left diagonal sensor
+#define SENS0 8   //left diagonal sensor PB0
 #define SENS1 9   //unused 
-#define SENS2 12  //front left sensor 
-#define SENS3 13  //right diagonal sensor  
-#define SENS4 A0  //front right sensor
+#define SENS2 12  //front left sensor PB4
+#define SENS3 13  //right diagonal sensor PB5  
+#define SENS4 A0  //front right sensor PC0
 #define SENS5 A1  //unused  
 #define SENS6 A2  //unused 
-#define SENS7 A3  //middle line sensor
+#define SENS7 A3  //middle line sensor PC3
 #define SENS8 A6  // only analog inputs
 #define SENS9 A7  // only analog inputs
 
@@ -126,14 +126,21 @@ void right(int a, int b, int t){
   delay(t);
 }
 
+//byte sensval(){
+  //bool FRONT_R = !digitalRead(SENS4);
+  //byte FRONT_L = !digitalRead(SENS2) * 2;
+  //byte RIGHT = digitalRead(SENS3) * 4;
+  //byte LEFT = digitalRead(SENS0) *8;
+  //byte total = FRONT_R + FRONT_L + RIGHT + LEFT;
+  //return total;
+//}
+
+#define readSens(port, pin) ((port & (1 << pin)) != 0)
+
 byte sensval(){
-  bool FRONT_R = !digitalRead(SENS4);
-  byte FRONT_L = !digitalRead(SENS2) * 2;
-  byte RIGHT = digitalRead(SENS3) * 4;
-  byte LEFT = digitalRead(SENS0) *8;
-  byte total = FRONT_R + FRONT_L + RIGHT + LEFT;
-  return total;
+  return (!readSens(PORTC, PC0))^(!readSens(PORTB, PB4) << 1)^(readSens(PORTB, PB5) << 2)^(readSens(PORTB, PB0) << 3);
 }
+
 
 void MainBattle() {
   while (digitalRead(REMOTE) == HIGH){
