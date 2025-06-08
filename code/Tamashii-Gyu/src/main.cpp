@@ -3,6 +3,10 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+
 
 #define SCREEN_WIDTH 128 //defines the width of the OLED screen
 #define SCREEN_HEIGHT 64 //defines the height of the OLED screen
@@ -29,13 +33,15 @@ Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1); //sets up the OLE
 Servo FLAG;
 
 // defines remote and button input pin
-#define REMOTE 4
-#define BTN2 2
-#define BTN1 7
+#define REMOTE 4  //PD4
+#define BTN2 2    //PD2
+#define BTN1 7    //PD7
+
 
 byte rut = 1;
 bool test_mode;
 int ang;
+
 
 void setup() {
   if(!oled.begin(SSD1306_SWITCHCAPVCC, 0x3c)){
@@ -58,8 +64,8 @@ void setup() {
   pinMode(SENS9, INPUT);
 
   pinMode(REMOTE, INPUT);
-  pinMode(BTN1, INPUT_PULLUP);
-  pinMode(BTN2, INPUT_PULLUP);
+  pinMode(BTN1, INPUT);
+  pinMode(BTN2, INPUT);
 
   pinMode(MA1, OUTPUT);
   pinMode(MA2, OUTPUT);
@@ -69,8 +75,7 @@ void setup() {
   Serial.begin(9600);
 }
 
-void oledWrite(String current_mode) { //function to show on screen the current mode
-  oled.clearDisplay();
+void oledWrite(String current_mode) { //function to show on screen the current mode oled.clearDisplay();
   oled.setTextSize(3);
   oled.setCursor(0, 20);
   oled.setTextColor(WHITE);
@@ -141,6 +146,40 @@ byte sensval(){
   return (!readSens(PORTC, PC0))^(!readSens(PORTB, PB4) << 1)^(readSens(PORTB, PB5) << 2)^(readSens(PORTB, PB0) << 3);
 }
 
+byte routines[] = {
+  0,
+  1,
+  2
+};
+
+int main(){
+  DDRB &= ~((1 << PB0) | (1 << PB4) | (1 << PB5)); // set SEN0, SENS2 and SENS3 as input
+  DDRC &= ~((1 << PC0) | (1 << PC3)); // set SEN4 and SENS7 as input
+  DDRD &= ~((1 << PD4) | (1 << PD2) | (1 << PD7)); // set REMOTE, BTN1 and BTN2 as input
+  DDRB |= ((1 << PB1) | (1 << PB2)); // set MA1 and MA2 as output
+  DDRD |= ((1 << PD3) | (1 << PD5)); // set MB2 and MB2 as output
+  while (1) {
+    off();
+    FLAG.write(90); // set servo to neutral position
+    if ((PORTD & (1 << PD2))) {
+      _delay_ms(150); // increase delay for less sensitivity (longer press), decrease for more sensitivity (shorter press)
+      rut++;
+      rut > sizeof(routines) ? rut = 0 : rut; // reset to 0 if rut exceeds 15
+    }
+    if ((PORTD & (1 << PD7))) {
+      _delay_ms(150);
+      rut--;
+      rut < 0 ? rut = sizeof(routines) : rut; // reset to 15 if rut is less than 0
+    }
+  }
+  switch (rut) {
+  case 0:
+    
+    break;
+  
+  }
+  return 0;
+}
 
 void MainBattle() {
   while (digitalRead(REMOTE) == HIGH){
