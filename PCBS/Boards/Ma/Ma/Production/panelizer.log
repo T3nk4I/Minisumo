@@ -1,0 +1,12 @@
+2025-07-27 19:22:47,601 - panelizer_logger - WARNING - 
+START: 2025-07-27T19:22:44.001208
+Board saved by user.
+Zones filled by Panelizer.
+
+Board: C:\Users\USUARIO\Documents\Minisumo\PCBS\Boards\Ma\Ma\Production\Ma_panelized.kicad_pcb
+Board dimensions: 50.00 x 30.00 mm.
+You can fit 1 x 3 boards on the panel.
+Zones refilled by Panelizer.
+Warning: panel is under 70x70mm. It may be too small to v-score.
+Warning: Ordering Instructions contains default values.
+

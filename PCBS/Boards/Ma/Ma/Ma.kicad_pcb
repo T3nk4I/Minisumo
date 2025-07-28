@@ -10802,7 +10802,7 @@
 				(type solid)
 			)
 			(layer "B.Fab")
-			(uuid "a2cdb81e-b8a4-4c2b-9f2f-a5b717d1077e")
+			(uuid "5b38d106-4751-4382-b8a1-90f40b7e76a7")
 		)
 		(fp_line
 			(start -0.625 2.35)
