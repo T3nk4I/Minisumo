@@ -51,13 +51,7 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [
-        {
-          "gap": 0.0,
-          "via_gap": 0.0,
-          "width": 0.0
-        }
-      ],
+      "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -185,13 +179,7 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [
-        0.0,
-        0.1143,
-        0.9525,
-        1.27,
-        2.54
-      ],
+      "track_widths": [],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -218,12 +206,7 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [
-        {
-          "diameter": 0.0,
-          "drill": 0.0
-        }
-      ],
+      "via_dimensions": [],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -466,7 +449,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Ma.kicad_pro",
+    "filename": "UART programmer.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -488,34 +471,14 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "line_style": 0,
-        "name": "6A",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
-        "schematic_color": "rgb(255, 0, 0)",
-        "track_width": 2.54,
-        "wire_width": 6
       }
     ],
     "meta": {
       "version": 4
     },
     "net_colors": null,
-    "netclass_assignments": {
-      "+BATT": [
-        "6A"
-      ]
-    },
-    "netclass_patterns": [
-      {
-        "netclass": "6A",
-        "pattern": "POWER"
-      }
-    ]
+    "netclass_assignments": null,
+    "netclass_patterns": []
   },
   "pcbnew": {
     "last_paths": {
@@ -646,7 +609,7 @@
   },
   "sheets": [
     [
-      "319bd167-e0c0-4b01-9082-7156625b5fc9",
+      "be32b851-f650-41de-9f78-ec4e3202bdec",
       "Root"
     ]
   ],
