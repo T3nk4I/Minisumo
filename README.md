@@ -13,9 +13,9 @@ Also anyone interested in making changes or upgrades can do them depending on th
 ## PCB's
 - Main boards:
   - Tei: PCB for minisumo using arduino nano and TB6612FNG
-  - Tenn: PCB for minisumo using arduino nano and DRV8871 drivers*
+  - Tenn: PCB for minisumo using arduino nano and DRV8871 drivers
   - Inn BEC: Battery Eliminator Circuit, (AKA buck converter) using XL1509 IC, supports up to 36V and has 5V output, also has a L7805 footprint in the back so it can be adaptable.
-  - *Ma: PCB using SMD atmega 328P and DRV8871 drivers*
+  - Ma: PCB using SMD atmega 328P and MSKSEMI RZ7899-MS drivers
   - *Jyo: PCB for microsumo using Seeeduino Xiao and DRV7781 drivers*
 - Sensors:
     - QTMicro: Microsized line sensor suitable for minisumo and microsumo robots
@@ -44,5 +44,4 @@ For the most part I try to make all the files as modifiable as possible, but in 
 - Code: I use Visual Studio Code with the **[PlatformIO](https://platformio.org/)** extension, but the framework I work on is the arduino framework, so you can use the **[ArduinoIDE](https://www.arduino.cc/en/software)** if you want.
 
 ---
-
-Wiki and How to Guides soon.....
+You can also visit my ORG. page, **[DENJU DIVISION](https://github.com/DENJU-DIVISION)** where we upload the different files individually, we upload mainly the boards that we have already tested and functioned without problems.
