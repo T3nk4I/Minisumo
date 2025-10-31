@@ -144,7 +144,7 @@ byte lineval(){
 
 void MainBattle() {
   while (digitalRead(REMOTE) == HIGH){
-    FLAG.write(180);
+    FLAG.write(ang);
     switch (lineval()){
     case 0:
       backwards(175,175,100);
@@ -320,6 +320,7 @@ void sensor_test(){
 void loop(){
   off();
   FLAG.write(93);
+  ang = 180;
   if (digitalRead(BTN1)==HIGH){  //increase routine cout if button 1 is pressed
     delay(150); //increase delay for less sensitivity (longer press), decrease for more sensitivity (shorter press)
     rut++;
@@ -333,61 +334,72 @@ void loop(){
     rut--;
     Serial.println("Button 2 pressed");
     if(rut<=0){
-      rut=11;
+      rut=13;
     }       
   }
   switch (rut){
     case 1: //Routine #1;
-      oledWrite("Normal");
+      oledWrite("Normal flag R");
+      ang = 0;
+      MainBattle();
+      break;
+
+    case 2: //Routine #1;
+      oledWrite("Normal flag L");
+      ang = 180;
       MainBattle();
       break;
     
-    case 2:
+    case 3:
       oledWrite("Rocket");
       rocket();
       break;
     
-    case 3:
+    case 4:
       oledWrite("Curve L");
+      ang = 0;
       curveL();
       break;
 
-    case 4:
+    case 5:
       oledWrite("Curve R");
+      ang = 180;
       curveR();
       break;
 
-    case 5:
+    case 6:
       oledWrite("Edging L");
+      ang = 0;
       edgingL();
       break;
 
-    case 6:
+    case 7:
       oledWrite("Edging R");
+      ang = 180;
       edgingR();
       break;
 
-    case 7:
+    case 8:
       oledWrite("Mexican");
       MainBattle();
       break;
     
-    case 8:
+    case 9:
       oledWrite("Robotrick");
       robotrick();
       break;
 
-    case 9:
+    case 10:
       oledWrite("woodpecker");
       MainBattle();
       break;
 
-    case 10:
+    case 11:
       oledWrite("Motor Test");
       motortest();
       break;
     
-    case 11:
+    case 12:
       oledWrite("Sensor Test");
       sensor_test();
       break;
