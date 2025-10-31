@@ -318,6 +318,23 @@ void sensor_test(){
 }
 
 void loop(){
+  String arr[] = {
+    "Normal flag R",
+    "Normal flag L",
+    "Rocket",
+    "Curve R",
+    "Curve L",
+    "Edging R",
+    "Edging L",
+    "Woodpecker",
+    "Mexican",
+    "Robotrick",
+    "Motor test",
+    "Sensor test"
+  };
+
+  byte totalModes = sizeof(arr) / sizeof(arr[0]);
+
   off();
   FLAG.write(93);
   ang = 180;
