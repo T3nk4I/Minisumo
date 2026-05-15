@@ -335,6 +335,7 @@ void loop(){
 
   byte totalModes = sizeof(arr) / sizeof(arr[0]);
 
+
   off();
   FLAG.write(93);
   ang = 180;
@@ -354,6 +355,9 @@ void loop(){
       rut=13;
     }       
   }
+
+  arr[rut-1];
+
   switch (rut){
     case 1: //Routine #1;
       oledWrite("Normal flag R");

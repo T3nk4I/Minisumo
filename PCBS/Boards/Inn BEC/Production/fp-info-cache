@@ -1,4 +1,4 @@
-25693139982274088
+25710632457566121
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -55229,6 +55229,20 @@ SMD SMT ceramic resonator filter filter hand-soldering
 0
 3
 3
+Custom Development Boards
+Untitled
+
+
+0
+0
+0
+Custom Development Boards
+arduino nano super mini
+
+
+0
+72
+24
 Diode_SMD
 D_0201_0603Metric
 Diode SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
@@ -57252,6 +57266,62 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
+EasyEDA
+CAP-SMD_L7.3-W4.3-FD
+
+
+0
+2
+2
+EasyEDA
+HDR-SMD_3P-P2.54-H-M-W13.3-N
+
+
+0
+3
+3
+EasyEDA
+HDR-SMD_6P-P2.54-H-F-W11.7
+
+
+0
+6
+6
+EasyEDA
+SW-SMD_SIQ-02FVS3_1
+
+
+0
+12
+10
+EasyEDA
+SW-SMD_TS24CA
+
+
+0
+6
+4
+EasyEDA
+SW-TH_XKB_SS-12M11XX
+
+
+0
+3
+3
+EasyEDA
+TYPE-C-SMD_TYPE-C-6P
+
+
+0
+10
+7
+EasyEDA
+USB-C-SMD_TYPE-C-6PIN-2MD-073
+
+
+0
+18
+14
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
