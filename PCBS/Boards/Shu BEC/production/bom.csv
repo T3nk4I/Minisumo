@@ -1,0 +1,13 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+C1,0603,1,10uF,
+"C2, C3",0201,2,0.1uF,
+"C4, C5",1206,2,22uF,
+C6,0201,1,75pF,
+J1,PinSocket_1x04_P2.54mm_Vertical,1,Conn_01x04,
+L1,L_Sunlord_MWSA0518S,1,10uH,
+R1,0201,1,49.9,
+R2,0201,1,100k,
+R3,0201,1,13.3k,
+R4,0201,1,511k,
+R5,0201,1,105k,
+U1,SOT-23-6,1,TPS54302,

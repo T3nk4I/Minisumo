@@ -1,0 +1,225 @@
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 674:Plugin executed on: 'win32'
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 675:Plugin executed with python version: '3.11.5 (main, Jan 23 2026, 07:39:48) [MSC v.1944 64 bit (AMD64)]'
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 676:KiCad build version: 10.0.2
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 677:Plugin version: 5.0.0
+
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 678:Frame repr: <wx._core.Frame object at 0x0000021E4E1353F0>
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 121:getting a list of all footprints on board
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint A1 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint TP1 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint H4 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C1 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint U3 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint SW3 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J1 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint R3 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J8 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint R1 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C5 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint TP2 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint R4 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint SW4 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C3 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint SW2 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint H1 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C4 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C6 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint R2 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J4 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J6 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint H3 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J9 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint U2 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint SW1 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint TP3 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J3 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint C2 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint H2 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J5 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint J2 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint U4 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.place_footprints 156:Footprint U1 on root level
+06-16 20:02:38 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 717:Reference footprint='A1'
+06-16 20:02:52 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 94:By Sheet GUI initialized
+06-16 20:02:52 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 103:Ref fp:Footprint(ref='A1', fp=<pcbnew.FOOTPRINT; proxy of <Swig Object of type 'FOOTPRINT *' at 0x0000021DBF2A50E0> >, fp_id='21FF2279-5AE4-4791-8AC1-6A99A72FF52A', sheet_id=[], filename=[])
+06-16 20:02:52 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 104:Levels:[]
+06-16 20:02:52 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 106:Selecting: 0
+06-16 20:02:52 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 110:Should invoke level_changed()
+06-16 20:02:52 com_github_MitjaNemec_PlaceFootprints.action_place_footprints 288:Level_changed() invoked
+06-16 20:19:50 kicad_search_plugin.part_selector_view.part_selector 484:pdf trigger link error 'NoneType' object has no attribute 'GetModelColumn'
+06-16 20:19:50 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:19:53 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:19:53 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:19:53 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:19:53 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:19:53 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:19:53 root 172:image: <wx._core.Bitmap object at 0x0000021E755368C0>
+06-16 20:19:53 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:19:55 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:19:55 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:10 kicad_search_plugin.part_selector_view.part_selector 482:pdf trigger link error
+06-16 20:20:10 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:10 root 172:image: <wx._core.Bitmap object at 0x0000021E75537520>
+06-16 20:20:10 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:10 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:10 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:15 kicad_search_plugin.part_selector_view.part_selector 482:pdf trigger link error
+06-16 20:20:15 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:15 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:15 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:15 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:15 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:15 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:15 root 172:image: <wx._core.Bitmap object at 0x0000021E75537010>
+06-16 20:20:15 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:16 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:16 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:16 kicad_search_plugin.part_selector_view.part_selector 482:pdf trigger link error
+06-16 20:20:16 root 186:image_count: https://www.eda.cn/img/default.png
+06-16 20:20:17 kicad_search_plugin.part_selector_view.part_selector 482:pdf trigger link error
+06-16 20:20:17 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:17 root 172:image: <wx._core.Bitmap object at 0x0000021E755377F0>
+06-16 20:20:17 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:17 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:17 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:18 kicad_search_plugin.part_selector_view.part_selector 482:pdf trigger link error
+06-16 20:20:18 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:18 root 172:image: <wx._core.Bitmap object at 0x0000021E75537AC0>
+06-16 20:20:18 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'gAMA' 41 4
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'cHRM' 57 32
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'iCCP' 101 216
+06-16 20:20:18 PIL.PngImagePlugin 434:iCCP profile name b'ICC Profile'
+06-16 20:20:18 PIL.PngImagePlugin 436:Compression method 0
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'pHYs' 329 9
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'IDAT' 350 65186
+06-16 20:20:18 root 172:image: <wx._core.Bitmap object at 0x0000021E754D29E0>
+06-16 20:20:18 root 186:image_count: https://www.eda.cn/img/default.png
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:18 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:18 root 186:image_count: https://file.elecfans.com/web2/M00/7A/52/poYBAGNxufyAAQmkAAGYqNFRQFs621.png
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'sRGB' 41 1
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'gAMA' 54 4
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'pHYs' 70 9
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'IDAT' 91 65445
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'gAMA' 41 4
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'cHRM' 57 32
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'iCCP' 101 216
+06-16 20:20:19 PIL.PngImagePlugin 434:iCCP profile name b'ICC Profile'
+06-16 20:20:19 PIL.PngImagePlugin 436:Compression method 0
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'pHYs' 329 9
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'IDAT' 350 65186
+06-16 20:20:19 root 186:image_count: https://www.eda.cn/img/default.png
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'gAMA' 41 4
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'cHRM' 57 32
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'iCCP' 101 216
+06-16 20:20:19 PIL.PngImagePlugin 434:iCCP profile name b'ICC Profile'
+06-16 20:20:19 PIL.PngImagePlugin 436:Compression method 0
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'pHYs' 329 9
+06-16 20:20:19 PIL.PngImagePlugin 204:STREAM b'IDAT' 350 65186
+06-16 20:20:38 kicad_search_plugin.part_selector_view.part_selector 484:pdf trigger link error 'NoneType' object has no attribute 'GetModelColumn'
+06-16 20:20:38 root 186:image_count: https://file.elecfans.com/web2/M00/1F/D4/poYBAGGbDQiANBQYAAH4JHXBcJQ598.png
+06-16 20:20:40 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:40 PIL.PngImagePlugin 204:STREAM b'pHYs' 41 9
+06-16 20:20:40 PIL.PngImagePlugin 204:STREAM b'IDAT' 62 8192
+06-16 20:20:40 root 172:image: <wx._core.Bitmap object at 0x0000021E754D2A70>
+06-16 20:20:40 root 186:image_count: https://file.elecfans.com/web2/M00/1F/D4/poYBAGGbDQiANBQYAAH4JHXBcJQ598.png
+06-16 20:20:41 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:41 PIL.PngImagePlugin 204:STREAM b'pHYs' 41 9
+06-16 20:20:41 PIL.PngImagePlugin 204:STREAM b'IDAT' 62 8192
+06-16 20:20:41 root 186:image_count: https://file.elecfans.com/web2/M00/1F/D4/poYBAGGbDQiANBQYAAH4JHXBcJQ598.png
+06-16 20:20:42 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:42 PIL.PngImagePlugin 204:STREAM b'pHYs' 41 9
+06-16 20:20:42 PIL.PngImagePlugin 204:STREAM b'IDAT' 62 8192
+06-16 20:20:43 kicad_search_plugin.part_selector_view.part_selector 482:pdf trigger link error
+06-16 20:20:43 root 186:image_count: https://file.elecfans.com/web2/M00/1F/D4/poYBAGGbDQiANBQYAAH4JHXBcJQ598.png
+06-16 20:20:43 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:43 PIL.PngImagePlugin 204:STREAM b'pHYs' 41 9
+06-16 20:20:43 PIL.PngImagePlugin 204:STREAM b'IDAT' 62 8192
+06-16 20:20:44 root 172:image: <wx._core.Bitmap object at 0x0000021E754D2A70>
+06-16 20:20:44 root 186:image_count: https://file.elecfans.com/web2/M00/1F/D4/poYBAGGbDQiANBQYAAH4JHXBcJQ598.png
+06-16 20:20:44 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:44 PIL.PngImagePlugin 204:STREAM b'pHYs' 41 9
+06-16 20:20:44 PIL.PngImagePlugin 204:STREAM b'IDAT' 62 8192
+06-16 20:20:44 root 186:image_count: https://file.elecfans.com/web2/M00/1F/D4/poYBAGGbDQiANBQYAAH4JHXBcJQ598.png
+06-16 20:20:44 kicad_search_plugin.part_selector_view.part_selector 482:pdf trigger link error
+06-16 20:20:44 root 186:image_count: https://file.elecfans.com/web2/M00/1F/D4/poYBAGGbDQiANBQYAAH4JHXBcJQ598.png
+06-16 20:20:44 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:44 PIL.PngImagePlugin 204:STREAM b'pHYs' 41 9
+06-16 20:20:44 PIL.PngImagePlugin 204:STREAM b'IDAT' 62 8192
+06-16 20:20:44 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:44 PIL.PngImagePlugin 204:STREAM b'pHYs' 41 9
+06-16 20:20:44 PIL.PngImagePlugin 204:STREAM b'IDAT' 62 8192
+06-16 20:20:44 root 172:image: <wx._core.Bitmap object at 0x0000021E754D2A70>
+06-16 20:20:44 root 186:image_count: https://file.elecfans.com/web2/M00/1F/D4/poYBAGGbDQiANBQYAAH4JHXBcJQ598.png
+06-16 20:20:45 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:45 PIL.PngImagePlugin 204:STREAM b'pHYs' 41 9
+06-16 20:20:45 PIL.PngImagePlugin 204:STREAM b'IDAT' 62 8192
+06-16 20:20:45 root 186:image_count: https://file.elecfans.com/web2/M00/1F/D4/poYBAGGbDQiANBQYAAH4JHXBcJQ598.png
+06-16 20:20:45 PIL.PngImagePlugin 204:STREAM b'IHDR' 16 13
+06-16 20:20:45 PIL.PngImagePlugin 204:STREAM b'pHYs' 41 9
+06-16 20:20:45 PIL.PngImagePlugin 204:STREAM b'IDAT' 62 8192
+06-16 20:20:50 kicad_search_plugin.part_selector_view.part_selector 482:pdf trigger link error
+06-16 20:20:50 root 186:image_count: https://www.e-sonic.com/Images/NoPhotoAvailable3.jpg
+06-16 20:20:50 root 196:Error downloading image: 403 Client Error: Forbidden for url: https://www.e-sonic.com/Images/NoPhotoAvailable3.jpg
+06-16 20:20:50 root 172:image: None
+06-16 20:20:50 root 186:image_count: https://www.e-sonic.com/Images/NoPhotoAvailable3.jpg
+06-16 20:20:50 root 196:Error downloading image: 403 Client Error: Forbidden for url: https://www.e-sonic.com/Images/NoPhotoAvailable3.jpg
